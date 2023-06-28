@@ -8,12 +8,16 @@ import pandas as pd
 import numpy as np
 from datasets import load_dataset, Dataset
 import re
+import argparse # move to hydra later, I guess...
 
-def prep_dataset(addr, tokenizer):
+OUTPUT_REGEXES = {'whole': r'###.?Output: (.+)', 
+                  'call': r'<<<api_call>>>: (.*?)\n<<<'}
+
+def prep_dataset(addr, tokenizer, output_regex='whole'):
     # prepare datasets
 
     def tokenize_function(examples):
-        return tokenizer( [f"<user>: {instr}\n<IDE-genie>: {answ}" for instr, answ in zip(examples['instruction'], examples['output'])]
+        return tokenizer( [f"<user>: {instr}\n<IDE-genie>: {answ}<|endoftext|>" for instr, answ in zip(examples['instruction'], examples['output'])]
                         # examples['instruction'], text_target=examples['output'], 
                         # truncation=True, padding='max_length', max_length=640
                         )
@@ -21,7 +25,7 @@ def prep_dataset(addr, tokenizer):
     # manually preparing the dataset
     df = pd.read_json(addr, lines=True)
     df_instructions_list = df.code.apply(lambda x: re.findall(r'###.?Instruction: (.*?)\n', x))
-    df_outputs_list = df.code.apply(lambda x: re.findall(r'###.?Output: (.+)', x, flags=re.DOTALL))
+    df_outputs_list = df.code.apply(lambda x: re.findall(OUTPUT_REGEXES[output_regex], x, flags=re.DOTALL))
     
     both_ok = (df_outputs_list.apply(len) == 1) & (df_instructions_list.apply(len) == 1)
     
@@ -66,24 +70,24 @@ def prep_model(model_addr):
 
     model.tie_weights()
 
-    device_map = infer_auto_device_map(model, max_memory={0: "5GiB",1: "5GiB",2: "5GiB",3: "5GiB",4: "5GiB",5: "5GiB"}, 
-                                       no_split_module_classes=["DecoderLayer"])
+    # device_map = infer_auto_device_map(model, max_memory={0: "5GiB",1: "5GiB",2: "5GiB",3: "5GiB",4: "5GiB",5: "5GiB"}, 
+    #                                    no_split_module_classes=["DecoderLayer"])
 
     model = load_checkpoint_and_dispatch(model, 
                                          model_addr, 
-                                         device_map=device_map)
+                                         device_map="auto",  no_split_module_classes=["DecoderLayer"])
 
     return model
 
 from transformers import TrainingArguments, Trainer
 
 
-def train():
+def train(args):
     tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b")
     tokenizer.add_special_tokens({'pad_token': '<?>'})
 
-    hf_train_dset = prep_dataset('/mnt/data/mart/gorilla/data/apibench/huggingface_train.json', tokenizer)
-    hf_eval_dset = prep_dataset('/mnt/data/mart/gorilla/data/apibench/huggingface_eval.json', tokenizer)
+    hf_train_dset = prep_dataset('/mnt/data/mart/gorilla/data/apibench/huggingface_train.json', tokenizer, args.answer_parser)
+    hf_eval_dset = prep_dataset('/mnt/data/mart/gorilla/data/apibench/huggingface_eval.json', tokenizer, args.answer_parser)
 
     model = prep_model("/mnt/data/mart/falcon-7b-sharded-bf16") 
 
@@ -107,4 +111,8 @@ def train():
     trainer.train()
 
 if __name__ == "__main__":
-    train()
+
+    parser = argparse.ArgumentParser(description='Tune the falcon-7B model in the Gorilla way')
+    parser.add_argument('--answer-parser', type=str, help='which regular expression to use for dataset filtering')
+    args = parser.parse_args()
+    train(args)
