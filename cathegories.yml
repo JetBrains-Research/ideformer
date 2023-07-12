@@ -1,0 +1,30 @@
+- name: FDOPS
+  description: '"FDOPS (File and Directory Operations)": Creating, deleting, modifying files and directories'
+  utils: [basename, cd, ln, mkdir, rmdir, rm, cp, mv, touch, ls, find, pwd, pushd, popd, dirname, tree, rename]
+- name: TXTPROC
+  description: '"TXTPROC (Text Processing)": Manipulating or displaying text data'
+  utils: [awk, cat, cut, diff, fold, grep, egrep, fgrep, nl, paste, sed, sort, uniq, column, rev, tac, tr, wc, join, seq, od, less, tail, head, more, vim, comm]
+- name: SYSINFO
+  description: '"SYSINFO (System Information and Management)": Providing system info or managing resources'
+  utils: [df, du, uname, top, mount, ifconfig, who, whoami, w, hostname, ps, pstree, date, md5sum, file, free, uptime, history, groups, shopt]
+- name: ARCH
+  description: '"ARCH (File Compression and Archiving)": Compressing, decompressing, or managing archives'
+  utils: [tar, gzip, gunzip, bzip2, bunzip2, cpio, zcat, zless]
+- name: NET
+  description: '"NET (Networking)": Handling networking tasks'
+  utils: [ping, ssh, scp, curl, wget, dig, ssh-keygen, rsync]
+- name: PROCCTRL
+  description: '"PROCCTRL (Job and Process Control)": Managing running processes and jobs'
+  utils: [bg, fg, jobs, kill, nohup, sleep, tmux]
+- name: HELPDOC
+  description: '"HELPDOC (Help and Documentation)": Providing help, manuals, or documentation'
+  utils: [man, info, apropos, which]
+- name: PROGSCRIPT
+  description: '"PROGSCRIPT (Programming and Scripting)": Used for programming tasks or script execution'
+  utils: [bash, sh, source, gcc]
+- name: SHUTIL
+  description: '"SHUTIL (Shell Utilities)": Providing various utility functionalities'
+  utils: [echo, read, set, env, bind, readlink, tee, watch, 'yes', 'true', 'false', split, mktemp, xargs, clear, crontab]
+- name: SECOP
+  description: '"SECOP (Secure Operations)": Managing security or access control'
+  utils: [chmod, chown, chgrp, sudo, su, shred]
