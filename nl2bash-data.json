@@ -17,7 +17,7 @@
     },
     "5": {
         "invocation": "Look for any instance of \"HIGHMEM\" in the current kernel's compile-time config file.",
-        "cmd": "grep \u201cHIGHMEM\u201d /boot/config-`uname -r`"
+        "cmd": "grep \"HIGHMEM\" /boot/config-`uname -r`"
     },
     "6": {
         "invocation": "Search for command \"tail\" in the maps of the process with PID 2671",
@@ -89,7 +89,7 @@
     },
     "23": {
         "invocation": "Add a line number to every line in \"long-file\"",
-        "cmd": "nl -ba long-file \\"
+        "cmd": "nl -ba long-file"
     },
     "24": {
         "invocation": "Add a number prefix followed by ')' to each line in \"$string\"",
@@ -605,7 +605,7 @@
     },
     "152": {
         "invocation": "Backup all PHP files under the current directory tree",
-        "cmd": "find -name \"*.php\" \u2013exec cp {} {}.bak \\;"
+        "cmd": "find -name \"*.php\" -exec cp {} {}.bak \\;"
     },
     "153": {
         "invocation": "Backup all of the Java files in the current directory tree by copying them and appending the suffix .bk to each",
@@ -2741,7 +2741,7 @@
     },
     "686": {
         "invocation": "Count the number of files in the current directory and below",
-        "cmd": "find . -type d -exec basename {} \\; | wc \u2013l"
+        "cmd": "find . -type d -exec basename {} \\; | wc -l"
     },
     "687": {
         "invocation": "Count the number of files in the directory trees whose pathnames match pattern '/dev/sd*[a-z]'",
@@ -4189,11 +4189,11 @@
     },
     "1048": {
         "invocation": "Delete all files with '.old' extension under current directory tree",
-        "cmd": "find . -name \u201c*.old\u201d -exec rm {} \\;"
+        "cmd": "find . -name \"*.old\" -exec rm {} \\;"
     },
     "1049": {
         "invocation": "Delete all files with '.old' extension under current directory tree",
-        "cmd": "find . -name \u201c*.old\u201d -print | xargs rm"
+        "cmd": "find . -name \"*.old\" -print | xargs rm"
     },
     "1050": {
         "invocation": "Delete all files with 128128 inode number under current directory tree",
@@ -4205,7 +4205,7 @@
     },
     "1052": {
         "invocation": "Delete all files with inode number 804180",
-        "cmd": "find -inum 804180 -exec rm {} \\"
+        "cmd": "find -inum 804180 -exec rm {} \\;"
     },
     "1053": {
         "invocation": "Delete all files/directories in minimum 2 levels down the root directory",
@@ -4253,7 +4253,7 @@
     },
     "1064": {
         "invocation": "Delete all files/directories with '.old' extension under current directory tree",
-        "cmd": "find . -name \u201c*.old\u201d -delete"
+        "cmd": "find . -name \"*.old\" -delete"
     },
     "1065": {
         "invocation": "Delete all files/directories with inode number 117672808 under current directory tree",
@@ -4261,7 +4261,7 @@
     },
     "1066": {
         "invocation": "Delete all files/directories with node number $inum under current directory tree",
-        "cmd": "find . -inum $inum -exec rm {} \\"
+        "cmd": "find . -inum $inum -exec rm {} \\;"
     },
     "1067": {
         "invocation": "Delete all hard links to the physical file with inode number 2655341",
@@ -4309,7 +4309,7 @@
     },
     "1078": {
         "invocation": "Delete all matches to the regex '^.*iframe bla bla bla.*$' in all the php files under current directory tree and modify the files in-place",
-        "cmd": "find ./ -type f -name \\*.php -exec sed -i \u2019s/^.*iframe bla bla bla.*$//g\u2019 {} \\;"
+        "cmd": "find ./ -type f -name \\*.php -exec sed -i 's/^.*iframe bla bla bla.*$//g' {} \\;"
     },
     "1079": {
         "invocation": "Delete all non digits from index \"$i\" in bash array \"depsAlastmodified\" and print the hex dump as characters",
@@ -4692,8 +4692,8 @@
         "cmd": "find / -type f -user bluher -exec ls -ls {}  \\;"
     },
     "1174": {
-        "invocation": "Display a long listing of all the regular files under current directory tree that are newer than \u2018Apr 18 23:59:59 EDT 2013\u2019 and older than \u2018Apr 20 00:00:00 EDT 2013\u2019 by modification time",
-        "cmd": "find . -type f -newermt \u2018Apr 18 23:59:59 EDT 2013\u2019 ! -newermt \u2018Apr 20 00:00:00 EDT 2013\u2019 -exec ls -l \u2018{}\u2019 \\;"
+        "invocation": "Display a long listing of all the regular files under current directory tree that are newer than 'Apr 18 23:59:59 EDT 2013' and older than 'Apr 20 00:00:00 EDT 2013' by modification time",
+        "cmd": "find . -type f -newermt 'Apr 18 23:59:59 EDT 2013' ! -newermt 'Apr 20 00:00:00 EDT 2013' -exec ls -l '{}' \\;"
     },
     "1175": {
         "invocation": "Display a long listing of the files/directories with human readable sizes (100M, 10G etc..) under '/var' directory tree which are bigger than 10MB",
@@ -4901,7 +4901,7 @@
     },
     "1226": {
         "invocation": "Display infinite scroll of random ASCII art",
-        "cmd": "yes 'c=(\u2571 \u2572);printf ${c[RANDOM%2]}'|bash"
+        "cmd": "yes 'c=(/ \\);printf ${c[RANDOM%2]}'|bash"
     },
     "1227": {
         "invocation": "Display infinite scroll of random ASCII art",
@@ -5205,7 +5205,7 @@
     },
     "1302": {
         "invocation": "Display the total count of all the files/directories with '.old' extension under current directory tree",
-        "cmd": "find . -name \u201c*.old\u201d -print | wc -l"
+        "cmd": "find . -name \"*.old\" -print | wc -l"
     },
     "1303": {
         "invocation": "Display top 500 mp4 and flv files under current directory along with their timestamps in the sorted order of time",
@@ -7029,7 +7029,7 @@
     },
     "1758": {
         "invocation": "Find all .c and .C files in the current directory tree that contain \"main(\" and copy them to directory test1/",
-        "cmd": "find -iname \u201c*.c\u201d -exec grep -l \u2018main(\u2018 {} \\; -a -exec cp {} test1/ \\;"
+        "cmd": "find -iname \"*.c\" -exec grep -l 'main(' {} \\; -a -exec cp {} test1/ \\;"
     },
     "1759": {
         "invocation": "Find all .c and .h files in the current directory tree and search them for \"expr\"",
@@ -7101,7 +7101,7 @@
     },
     "1776": {
         "invocation": "Find all .jpg files in the current directory and below.",
-        "cmd": "find . -name \u201c*.jpg\u201d"
+        "cmd": "find . -name \"*.jpg\""
     },
     "1777": {
         "invocation": "Find all .js files in the $d directory tree whose pathnames do not contain whitespaces",
@@ -7181,7 +7181,7 @@
     },
     "1796": {
         "invocation": "Find all .sh files in the current directory tree and remove them",
-        "cmd": "find . -name \"*.sh\" -exec rm -rf '{}' \\"
+        "cmd": "find . -name \"*.sh\" -exec rm -rf '{}' \\;"
     },
     "1797": {
         "invocation": "Find all .sh files in the current directory tree and remove them",
@@ -7365,7 +7365,7 @@
     },
     "1842": {
         "invocation": "Find all C source code files from the current directory tree that contain \"keyword\" in their pathnames, ignoring the case",
-        "cmd": "find . -type f \\( -iname \u201c*.c\u201d \\) |grep -i \u201ckeyword\u201d"
+        "cmd": "find . -type f \\( -iname \"*.c\" \\) |grep -i \"keyword\""
     },
     "1843": {
         "invocation": "Find all CDC* files under current directory that were accessed less than 1 day ago and delete the first and last lines from those files",
@@ -7893,7 +7893,7 @@
     },
     "1974": {
         "invocation": "Find all directories that start with stat",
-        "cmd": "find . -type d \u2013iname stat*"
+        "cmd": "find . -type d -iname stat*"
     },
     "1975": {
         "invocation": "Find all directories under $1/.hg and set their SGID bit",
@@ -8065,7 +8065,7 @@
     },
     "2017": {
         "invocation": "Find all directories under and below directory \"folder_name\", and change their permissions to 775",
-        "cmd": "find folder_name -type d -exec chmod 775 \u2018{}\u2019 \\;"
+        "cmd": "find folder_name -type d -exec chmod 775 '{}' \\;"
     },
     "2018": {
         "invocation": "Find all directories under and below parent_directory",
@@ -8857,7 +8857,7 @@
     },
     "2215": {
         "invocation": "Find all files in the current directory tree whose pathnames match pattern '*/1/lang/en.css'",
-        "cmd": "find . -path \u2018*/1/lang/en.css\u2019 -print"
+        "cmd": "find . -path '*/1/lang/en.css' -print"
     },
     "2216": {
         "invocation": "Find all files in the current directory tree whose size is greater than 1MB",
@@ -8888,12 +8888,12 @@
         "cmd": "find -type f -name .git -prune -o -print"
     },
     "2223": {
-        "invocation": "Find all files in the current directory \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 and its sub-directories with the optional constraints of \u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430, \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 and/or \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435.",
-        "cmd": "find \u0430\u0440\u0433\u0443\u043c\u0435\u043d\u0442 [\u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430] [\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435] [\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435]"
+        "invocation": "Find all files in the current directory argument and its sub-directories with the optional constraints of option_search, value and/or value.",
+        "cmd": "find argument [option_search] [value] [value]"
     },
     "2224": {
-        "invocation": "Find all files in the current user's home directory and its sub-directories with the optional constraints of \u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430, \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 and/or \u043e\u043f\u0446\u0438\u044f_\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f.",
-        "cmd": "find ~/ [\u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430] [\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435] [\u043e\u043f\u0446\u0438\u044f_\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f]"
+        "invocation": "Find all files in the current user's home directory and its sub-directories with the optional constraints of option_search, value and/or option_action.",
+        "cmd": "find ~/ [option_search] [value] [option_action]"
     },
     "2225": {
         "invocation": "Find all files in the directory $directory or below with the permissions specificed by $permissions.",
@@ -9332,8 +9332,8 @@
         "cmd": "find /home -atime +100"
     },
     "2334": {
-        "invocation": "Find all files throughout the entire file hierarchy with the optional constraints of \u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430, \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 and/or \u043e\u043f\u0446\u0438\u044f_\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f.",
-        "cmd": "find / [\u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430] [\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435] \t[\u043e\u043f\u0446\u0438\u044f_\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f]"
+        "invocation": "Find all files throughout the entire file hierarchy with the optional constraints of option_search, value and/or option_action.",
+        "cmd": "find / [option_search] [value] \t[option_action]"
     },
     "2335": {
         "invocation": "Find all files under \"/path\" that do not contain a \".\" and append \".jpg\" to their file name",
@@ -10356,8 +10356,8 @@
         "cmd": "find / -name vimrc"
     },
     "2590": {
-        "invocation": "Find all files/directories named '\u0438\u043c\u044f_\u0444\u0430\u0439\u043b\u0430' in the entire filesystem",
-        "cmd": "find / -name \"\u0438\u043c\u044f_\u0444\u0430\u0439\u043b\u0430\""
+        "invocation": "Find all files/directories named 'file_name' in the entire filesystem",
+        "cmd": "find / -name \"file_name\""
     },
     "2591": {
         "invocation": "Find all files/directories named Root under current directory and copy them to newRoot",
@@ -10973,7 +10973,7 @@
     },
     "2744": {
         "invocation": "Find all files/directories under current directory tree with '.old' extension",
-        "cmd": "find . -name \u201d*.old\u201d -print"
+        "cmd": "find . -name \"*.old\" -print"
     },
     "2745": {
         "invocation": "Find all files/directories under current directory tree with inode number 211028 and move them to 'newname.dir'",
@@ -11145,7 +11145,7 @@
     },
     "2787": {
         "invocation": "Find all files/directories with 777 permission under '/apps/audit' and strip write permission for 'other' from them",
-        "cmd": "find /apps/audit -perm -7 -print | xargs chmod o\u2011w"
+        "cmd": "find /apps/audit -perm -7 -print | xargs chmod o-w"
     },
     "2788": {
         "invocation": "Find all files/directories with 777 permission under current directory tree",
@@ -11161,7 +11161,7 @@
     },
     "2791": {
         "invocation": "Find all files/directories with inode number 16187430 and move them to 'new-test-file-name'",
-        "cmd": "find -inum 16187430 -exec mv {} new-test-file-name \\"
+        "cmd": "find -inum 16187430 -exec mv {} new-test-file-name \\;"
     },
     "2792": {
         "invocation": "Find all files/directories with name pattern $nombre that are at most 2 levels down the $DIR_TEMPORAL and $DIR_DESCARGA directories and show only the file names (without parent path) appended with '.torrent'",
@@ -11529,7 +11529,7 @@
     },
     "2883": {
         "invocation": "Find all regular files in the current directory tree that have been modified within the last 10 minutes",
-        "cmd": "find . \u2013type f -mmin -10"
+        "cmd": "find . -type f -mmin -10"
     },
     "2884": {
         "invocation": "Find all regular files in the current directory tree that match pattern 'btree*.c'",
@@ -11673,7 +11673,7 @@
     },
     "2919": {
         "invocation": "Find all regular files that start with stat",
-        "cmd": "find . -type f \u2013iname stat*"
+        "cmd": "find . -type f -iname stat*"
     },
     "2920": {
         "invocation": "Find all regular files that were modified $FTIME days ago under current directory tree",
@@ -11717,7 +11717,7 @@
     },
     "2930": {
         "invocation": "Find all regular files under $SOURCE directory tree that were modified more than $KEEP days ago and show only the names without the paths",
-        "cmd": "find $SOURCE -type f -mtime +$KEEP | sed \u2018s#.*/##'"
+        "cmd": "find $SOURCE -type f -mtime +$KEEP | sed 's#.*/##'"
     },
     "2931": {
         "invocation": "Find all regular files under $d directory tree and change their permissions to 777",
@@ -11813,7 +11813,7 @@
     },
     "2954": {
         "invocation": "Find all regular files under current directory tree and replace all '1.2.3.4' with '5.6.7.8' in these files modiying the files in-place",
-        "cmd": "find . -type f -exec sed -i \"s/1\\.2\\.3\\.4/5.6.7.8/g\" {} \\"
+        "cmd": "find . -type f -exec sed -i \"s/1\\.2\\.3\\.4/5.6.7.8/g\" {} \\;"
     },
     "2955": {
         "invocation": "Find all regular files under current directory tree containing 'some text' in their names without descending into hidden directories and excluding hidden files",
@@ -11845,7 +11845,7 @@
     },
     "2962": {
         "invocation": "Find all regular files under current directory tree, prepend '#' at the beginning of the lines that contain 'abc' in those files and modify them in-place",
-        "cmd": "find . -type f -exec sed -i \u2018s/.*abc.*/#&/\u2019 {} \\;"
+        "cmd": "find . -type f -exec sed -i 's/.*abc.*/#&/' {} \\;"
     },
     "2963": {
         "invocation": "Find all regular files under test directory",
@@ -11981,7 +11981,7 @@
     },
     "2996": {
         "invocation": "Find all symbolic links under the current folder and below",
-        "cmd": "find \u2013L \u2013xtype l"
+        "cmd": "find -L -xtype l"
     },
     "2997": {
         "invocation": "Find all symlinks in the /myfiles directory tree",
@@ -12036,12 +12036,12 @@
         "cmd": "find . -maxdepth 1 -name '*.txt' -mtime +2"
     },
     "3010": {
-        "invocation": "Find all the .c files in the current directory tree that contain the string \u2018stdlib.h\u2019",
+        "invocation": "Find all the .c files in the current directory tree that contain the string 'stdlib.h'",
         "cmd": "find . -name '*.c' | xargs grep 'stdlib.h'"
     },
     "3011": {
-        "invocation": "Find all the .c files in the current directory tree that contain the string \u2018stdlib.h\u2019",
-        "cmd": "find . -name \u2018*.c\u2019 | xargs egrep stdlib.h"
+        "invocation": "Find all the .c files in the current directory tree that contain the string 'stdlib.h'",
+        "cmd": "find . -name '*.c' | xargs egrep stdlib.h"
     },
     "3012": {
         "invocation": "Find all the .mp3 files in the music folder and pass to the ls command, -print0 is required if any filenames contain whitespace",
@@ -12137,7 +12137,7 @@
     },
     "3035": {
         "invocation": "Find all the files in file system which are modified more than 50 days back and less than 100 days",
-        "cmd": "find / -mtime +50 \u2013mtime -100"
+        "cmd": "find / -mtime +50 -mtime -100"
     },
     "3036": {
         "invocation": "Find all the files in the current directory",
@@ -12156,7 +12156,7 @@
         "cmd": "find . -type f ! -perm 777 | head"
     },
     "3040": {
-        "invocation": "Find all the files in the current directory with \u201clinkin park\u201d in their names",
+        "invocation": "Find all the files in the current directory with \"linkin park\" in their names",
         "cmd": "find . -maxdepth 1 -iname \"*linkin park*\""
     },
     "3041": {
@@ -12184,7 +12184,7 @@
         "cmd": "find -maxdepth 1 -not -iname \"MyCProgram.c\""
     },
     "3047": {
-        "invocation": "Find all the files that end with the extension \u201c.java\u201d in the current directoy tree",
+        "invocation": "Find all the files that end with the extension \".java\" in the current directoy tree",
         "cmd": "find . -name \"*.java\""
     },
     "3048": {
@@ -12253,7 +12253,7 @@
     },
     "3064": {
         "invocation": "Find all the files which are modified more than 50 days back and less than 100 days",
-        "cmd": "find / -mtime +50 \u2013mtime -100"
+        "cmd": "find / -mtime +50 -mtime -100"
     },
     "3065": {
         "invocation": "Find all the files which were accessed 50 days ago",
@@ -12425,7 +12425,7 @@
     },
     "3107": {
         "invocation": "Find and delete all core files in the user's home directory and below.",
-        "cmd": "find ~/ -name 'core*' -exec rm {} \\"
+        "cmd": "find ~/ -name 'core*' -exec rm {} \\;"
     },
     "3108": {
         "invocation": "Find and delete all files with a used disk size of 0",
@@ -13288,7 +13288,7 @@
         "cmd": "find / -nouser -o  -nogroup"
     },
     "3323": {
-        "invocation": "Find files that don\u2019t have 644 permissions",
+        "invocation": "Find files that don't have 644 permissions",
         "cmd": "find / -type f ! -perm 644"
     },
     "3324": {
@@ -13333,7 +13333,7 @@
     },
     "3334": {
         "invocation": "Find files that were modified second last week and archive them",
-        "cmd": "find . -type f -mtime +7 -mtime -14 | xargs tar -cvf `date \u2018+%d%m%Y\u2019_archive.tar`"
+        "cmd": "find . -type f -mtime +7 -mtime -14 | xargs tar -cvf `date '+%d%m%Y'_archive.tar`"
     },
     "3335": {
         "invocation": "Find files under '/travelphotos' directory tree which are bigger than 200KB and do not have 2015 in their names",
@@ -13781,7 +13781,7 @@
     },
     "3446": {
         "invocation": "Find image files and move them to the pictures directory",
-        "cmd": "find ~/Desktop -name \u201c*.jpg\u201d -o -name \u201c*.gif\u201d -o -name \u201c*.png\u201d -print0 | xargs -0 mv \u2013target-directory ~/Pictures"
+        "cmd": "find ~/Desktop -name \"*.jpg\" -o -name \"*.gif\" -o -name \"*.png\" -print0 | xargs -0 mv -target-directory ~/Pictures"
     },
     "3447": {
         "invocation": "Find in the current direcoty whose suffix is .tmp , find will not serach recursively limit of find is 2 subdirectory .",
@@ -13856,7 +13856,7 @@
         "cmd": "find . -name '*~' | xargs rm"
     },
     "3465": {
-        "invocation": "Find recursively all Python files in the current directory and search them for the word \u2018import\u2019",
+        "invocation": "Find recursively all Python files in the current directory and search them for the word 'import'",
         "cmd": "find . -name '*.py' | xargs grep 'import'"
     },
     "3466": {
@@ -14153,7 +14153,7 @@
     },
     "3539": {
         "invocation": "Find text files modified less than 5 days ago",
-        "cmd": "find . \u2013name \"*.txt\" \u2013mtime 5"
+        "cmd": "find . -name \"*.txt\" -mtime 5"
     },
     "3540": {
         "invocation": "Find text in whole directory tree",
@@ -14189,7 +14189,7 @@
     },
     "3548": {
         "invocation": "Find the core files and  remove them",
-        "cmd": "find . -name \u201ccore\u201d -exec rm -f {} \\;"
+        "cmd": "find . -name \"core\" -exec rm -f {} \\;"
     },
     "3549": {
         "invocation": "Find the current directory and all its subdirectories.",
@@ -14249,7 +14249,7 @@
     },
     "3563": {
         "invocation": "Find the first file/directory under $DIR which matches the $TMP_DIR in its path",
-        "cmd": "/usr/bin/find $DIR -maxdepth 1 -ipath $TMP_DIR -print -quit"
+        "cmd": "find $DIR -maxdepth 1 -ipath $TMP_DIR -print -quit"
     },
     "3564": {
         "invocation": "Find the first file/directory under current directory and quit",
@@ -15033,7 +15033,7 @@
     },
     "3759": {
         "invocation": "Get a detailed list of all files on the system larger than 10MB",
-        "cmd": "find / -size +10M -printf \u201c%12s %t %h/%fn\u201d"
+        "cmd": "find / -size +10M -printf \"%12s %t %h/%fn\""
     },
     "3760": {
         "invocation": "Get a detailed listing of all symbolic links in /usr/bin starting with \"z\"",
@@ -15809,7 +15809,7 @@
     },
     "3953": {
         "invocation": "List *.txt files residing in the current directory tree",
-        "cmd": "find . -name *.txt -exec ls {} ;\\"
+        "cmd": "find . -name *.txt -exec ls {} \\;"
     },
     "3954": {
         "invocation": "List *.txt files under current directory that have 'mystring' in their name",
@@ -17497,11 +17497,11 @@
     },
     "4375": {
         "invocation": "Look for *.jpg files",
-        "cmd": "find . -name \u201c*.jpg\u201d"
+        "cmd": "find . -name \"*.jpg\""
     },
     "4376": {
         "invocation": "Look for *.jpg files on the system",
-        "cmd": "find / -name \u201c*.jpg\u201d"
+        "cmd": "find / -name \"*.jpg\""
     },
     "4377": {
         "invocation": "Look for *log files in directories at least three levels down the directory tree",
@@ -18829,11 +18829,11 @@
     },
     "4708": {
         "invocation": "Perform a default Plesk configuration",
-        "cmd": "find /var/www/vhosts/*/httpdocs -type f -iwholename \u201c*/wp-includes/version.php\u201d -exec grep -H \u201c\\$wp_version =\u201d {} \\;"
+        "cmd": "find /var/www/vhosts/*/httpdocs -type f -iwholename \"*/wp-includes/version.php\" -exec grep -H \"\\$wp_version =\" {} \\;"
     },
     "4709": {
         "invocation": "Perform a default cPanel configuration",
-        "cmd": "find /home/*/public_html/ -type f -iwholename \u201c*/wp-includes/version.php\u201d -exec grep -H \u201c\\$wp_version =\u201d {} \\;"
+        "cmd": "find /home/*/public_html/ -type f -iwholename \"*/wp-includes/version.php\" -exec grep -H \"\\$wp_version =\" {} \\;"
     },
     "4710": {
         "invocation": "Perform a dry run replacing \"special\" with \"regular\" in all file names in the current directory",
@@ -19349,7 +19349,7 @@
     },
     "4838": {
         "invocation": "Print a list of JPG files residing in the current directory tree",
-        "cmd": "find . -name \u201c*.jpg\u201d"
+        "cmd": "find . -name \"*.jpg\""
     },
     "4839": {
         "invocation": "Print a list of all *.code files from the current directory tree",
@@ -23189,7 +23189,7 @@
     },
     "5798": {
         "invocation": "Receive pattern to search for on the standard input and print only matching part of lines from file 'f.html'",
-        "cmd": "cat f.html | grep -o \\"
+        "cmd": "cat f.html | grep -o \\;"
     },
     "5799": {
         "invocation": "Records the number of occurences of 'needle' in the array 'haystack' into the variable 'inarray'",
@@ -23853,19 +23853,19 @@
     },
     "5964": {
         "invocation": "Recursively finds strings with 'word-1' or 'word-2' in any file under 'directory-path', following symlinks, and prints found strings.",
-        "cmd": "egrep -R \"word-1|word-2\u201d directory-path"
+        "cmd": "egrep -R \"word-1|word-2\" directory-path"
     },
     "5965": {
         "invocation": "Recursively finds strings with the whole word 'word-1' or 'word-2' in any file under 'directory-path', following symlinks, and prints found strings.",
-        "cmd": "egrep -w -R \"word-1|word-2\u201d directory-path"
+        "cmd": "egrep -w -R \"word-1|word-2\" directory-path"
     },
     "5966": {
-        "invocation": "Recursively finds strings with\"text string to search\u201d in any file within the 'directory-path', following symlinks, and prints found strings with file names.",
-        "cmd": "grep -r -H \"text string to search\u201d directory-path"
+        "invocation": "Recursively finds strings with\"text string to search\" in any file within the 'directory-path', following symlinks, and prints found strings with file names.",
+        "cmd": "grep -r -H \"text string to search\" directory-path"
     },
     "5967": {
-        "invocation": "Recursively finds strings with\"text string to search\u201d in files under 'directory-path', regarding provided options '[option]'.",
-        "cmd": "grep [option] \"text string to search\u201d directory-path"
+        "invocation": "Recursively finds strings with\"text string to search\" in files under 'directory-path', regarding provided options '[option]'.",
+        "cmd": "grep [option] \"text string to search\" directory-path"
     },
     "5968": {
         "invocation": "Recursively findsfiles with text pattern in current folder, ingnoring case differences, prefixes each matched line with number in file and suppresses error messages about nonexistent or unreadable files.",
@@ -23877,7 +23877,7 @@
     },
     "5970": {
         "invocation": "Recursively list all files and directories in \"coreutils-8.9\" with \"DIR: \" prepending directory names",
-        "cmd": "tree -F coreutils-8.9 | sed -r 's|\u2500\u2500 (.*)/$|\u2500\u2500 DIR: \\1|'"
+        "cmd": "tree -F coreutils-8.9 | sed -r 's|-- (.*)/$|-- DIR: \\1|'"
     },
     "5971": {
         "invocation": "Recursively list all files on smbfs mounts",
@@ -24705,7 +24705,7 @@
     },
     "6177": {
         "invocation": "Remove all files that were older than 3 days",
-        "cmd": "find . -type f -mtime +3 \u2013exec rm \u2013f {} \\;"
+        "cmd": "find . -type f -mtime +3 -exec rm -f {} \\;"
     },
     "6178": {
         "invocation": "Remove all files under $DIR that were accessed more than 5 days ago",
@@ -25761,11 +25761,11 @@
     },
     "6441": {
         "invocation": "Replace \"foo\" with \"bar\" in all files in the current directory tree",
-        "cmd": "find . | xargs sed -i \u2018s/foo/bar/g\u2019"
+        "cmd": "find . | xargs sed -i 's/foo/bar/g'"
     },
     "6442": {
         "invocation": "Replace \"foo\" with \"bar\" in all files in the current directory tree except hidden ones",
-        "cmd": "find . -type f -not -name \u201c.*\u201d -print | xargs sed -i \u2018s/foo/bar/g\u2019"
+        "cmd": "find . -type f -not -name \".*\" -print | xargs sed -i 's/foo/bar/g'"
     },
     "6443": {
         "invocation": "Replace \"inputfile\" with a sorted unique list of its contents",
@@ -25792,8 +25792,8 @@
         "cmd": "tr  ' ' '-'"
     },
     "6449": {
-        "invocation": "Replace all '\u7f6e\u63db\u524d' with '\u7f6e\u63db\u5f8c' in all regular files under current directory tree and modify them in-place",
-        "cmd": "sudo find . -type f -exec sed -i 's/\u7f6e\u63db\u524d/\u7f6e\u63db\u5f8c/g' {} \\;"
+        "invocation": "Replace all 'before' with 'after' in all regular files under current directory tree and modify them in-place",
+        "cmd": "sudo find . -type f -exec sed -i 's/before/after/g' {} \\;"
     },
     "6450": {
         "invocation": "Replace all URLs in \"MyHTMLFile.html\" with \"$pub_url\" and create a backup with suffix \".bak\"",
@@ -27273,7 +27273,7 @@
     },
     "6819": {
         "invocation": "Search *.x files from the current directory tree for string \"fred\"",
-        "cmd": "find . -name \u2018*.x\u2019 -print0 | xargs -0 grep fred"
+        "cmd": "find . -name '*.x' -print0 | xargs -0 grep fred"
     },
     "6820": {
         "invocation": "Search .c and .h files in the current directory tree for \"expr\"",
@@ -27881,7 +27881,7 @@
     },
     "6971": {
         "invocation": "Search for 'pattern' in all files with '.cc' extension under current directory tree and show the matched lines with line numbers and filenames",
-        "cmd": "find . -name \u201c*.cc\u201d |xargs grep -n \u201cpattern\u201d"
+        "cmd": "find . -name \"*.cc\" |xargs grep -n \"pattern\""
     },
     "6972": {
         "invocation": "Search for 'pattern' in file 'file' and print the matched lines by separating them with spaces instead of newlines",
@@ -27912,8 +27912,8 @@
         "cmd": "find . -name '*.txt' -exec grep 'sometext' '{}' \\; -print"
     },
     "6979": {
-        "invocation": "Search for 'specific string' in all files matching the name pattern '\u201c*.[txt|TXT]\u201d' under current directory tree",
-        "cmd": "find . -name \u201c*.[txt|TXT]\u201d -print | xargs grep \u201cspecific string\u201d"
+        "invocation": "Search for 'specific string' in all files matching the name pattern '\"*.[txt|TXT]\"' under current directory tree",
+        "cmd": "find . -name \"*.[txt|TXT]\" -print | xargs grep \"specific string\""
     },
     "6980": {
         "invocation": "Search for 'string' case insensitively in all files under current directory tree and show the matched lines with their filenames",
@@ -27948,8 +27948,8 @@
         "cmd": "find . -exec grep whatIWantToFind {} \\;"
     },
     "6988": {
-        "invocation": "Search for '\u201cfoobar\u201d' in all files starting with '\u2018' and ending with '\u2019' and contain '.' in their names in the entire filesystem and display only the matched files",
-        "cmd": "find / -name \u2018*.*\u2019 -exec grep -il \u201cfoobar\u201d {} \\;"
+        "invocation": "Search for '\"foobar\"' in all files starting with ''' and ending with ''' and contain '.' in their names in the entire filesystem and display only the matched files",
+        "cmd": "find / -name '*.*' -exec grep -il \"foobar\" {} \\;"
     },
     "6989": {
         "invocation": "Search for *pattern* in and below current directory",
@@ -28653,7 +28653,7 @@
     },
     "7164": {
         "invocation": "Search the ./bin directory recursively for files called \"cp\"",
-        "cmd": "find ./bin -name \u201ccp\u201d"
+        "cmd": "find ./bin -name \"cp\""
     },
     "7165": {
         "invocation": "Search the ./in_save directory for regular files and view the result using pager `more'",
@@ -29737,7 +29737,7 @@
     },
     "7435": {
         "invocation": "Search the entire file hierarchy for all regular files owned by olduser and change their ownership to newuser.",
-        "cmd": "find / -user olduser  -type f  -exec chown newuser {} \\"
+        "cmd": "find / -user olduser  -type f  -exec chown newuser {} \\;"
     },
     "7436": {
         "invocation": "Search the entire file hierarchy for any file that begins with zsh and exists on the ext3 file systems.",
@@ -29749,7 +29749,7 @@
     },
     "7438": {
         "invocation": "Search the entire file hierarchy for files ending in '.old' and delete them.",
-        "cmd": "find / -name \"*.old\" -exec /bin/rm {} \\"
+        "cmd": "find / -name \"*.old\" -exec /bin/rm {} \\;"
     },
     "7439": {
         "invocation": "Search the entire file hierarchy for files ending with '~' and print all matches except for those with '/media' in their pathnames.",
@@ -29765,11 +29765,11 @@
     },
     "7442": {
         "invocation": "Search the entire file system for .jpg files.",
-        "cmd": "find / -name \u201c*.jpg\u201d"
+        "cmd": "find / -name \"*.jpg\""
     },
     "7443": {
         "invocation": "Search the entire file system for any file that is writable by other.",
-        "cmd": "find / \u2013 perm -0002"
+        "cmd": "find / -perm -0002"
     },
     "7444": {
         "invocation": "Search the entire system for SUID or SGID files",
@@ -30036,11 +30036,11 @@
         "cmd": "find . -name myfile |& grep -v 'Permission denied'"
     },
     "7510": {
-        "invocation": "Search the system for the file \u201ctestfile.txt\u201d",
+        "invocation": "Search the system for the file \"testfile.txt\"",
         "cmd": "find / -name \"testfile.txt\""
     },
     "7511": {
-        "invocation": "Search the system for the file \u201ctestfile.txt\u201d ignoring the case",
+        "invocation": "Search the system for the file \"testfile.txt\" ignoring the case",
         "cmd": "find / -iname \"testfile.txt\""
     },
     "7512": {
@@ -31541,7 +31541,7 @@
     },
     "7886": {
         "invocation": "Takes folder path from string '/path/to/copy/file/to/is/very/deep/there' and created it with all parents.",
-        "cmd": "mkdir -p `dirname /path/to/copy/file/to/is/very/deep/there` \\"
+        "cmd": "mkdir -p `dirname /path/to/copy/file/to/is/very/deep/there` \\;"
     },
     "7887": {
         "invocation": "Takes path list from '.exportfiles.text' file, cuts off first two path segments and last one.",
@@ -31757,7 +31757,7 @@
     },
     "7940": {
         "invocation": "Unzip and untar \"openssl-fips-2.0.1.tar.gz\"",
-        "cmd": "gunzip -c openssl-fips-2.0.1.tar.gz | tar xf \u00ad-"
+        "cmd": "gunzip -c openssl-fips-2.0.1.tar.gz | tar xf --"
     },
     "7941": {
         "invocation": "Unzip and untar \"tarball.tar.gz\"",
@@ -32357,7 +32357,7 @@
     },
     "8090": {
         "invocation": "change the extension of all the \".lst\" files in the current folder to \"a.lst\"",
-        "cmd": "find -name \u2018*.lst\u2019 -exec rename .lst a.lst {} \\;"
+        "cmd": "find -name '*.lst' -exec rename .lst a.lst {} \\;"
     },
     "8091": {
         "invocation": "change the extension of all the files in the current folder to html excluding those html files and those which are present in another disk partition",
@@ -32549,7 +32549,7 @@
     },
     "8138": {
         "invocation": "change the permissions of all the files ending with \"fits\" in the folder \"/store/01\"",
-        "cmd": "find /store/01 -name \"*.fits\" -exec chmod -x+r {} \\; \\"
+        "cmd": "find /store/01 -name \"*.fits\" -exec chmod -x+r {} \\; \\;"
     },
     "8139": {
         "invocation": "change the permissions of all the files ending with \"fits\" in the folder \"/store/01\" and save the output file names to a log file",
@@ -33213,7 +33213,7 @@
     },
     "8304": {
         "invocation": "delete all the log files which have not been modified in the last 5 days after user confirmation",
-        "cmd": "find . \u2014 name \"*.LOG\" \u2014 mtime +5 -ok rm {} \\;"
+        "cmd": "find . -name \"*.LOG\" -mtime +5 -ok rm {} \\;"
     },
     "8305": {
         "invocation": "delete all the mp3 files in the current folder.",
@@ -33221,7 +33221,7 @@
     },
     "8306": {
         "invocation": "delete all the mp3 files in the home folder",
-        "cmd": "find /home/ -exec grep -l \u201cmp3\u201d {} \\; | xargs rm"
+        "cmd": "find /home/ -exec grep -l \"mp3\" {} \\; | xargs rm"
     },
     "8307": {
         "invocation": "delete all the mp4 files in the folder /home which are bigger than 10MB",
@@ -33445,7 +33445,7 @@
     },
     "8362": {
         "invocation": "display a long listing of all the files in the current folder",
-        "cmd": "find . \u2014 type f -exec ls -1 {} \\;"
+        "cmd": "find . -type f -exec ls -1 {} \\;"
     },
     "8363": {
         "invocation": "display a long listing of all the files in the current folder in sorted order, which are bigger than 10KB",
@@ -33481,7 +33481,7 @@
     },
     "8371": {
         "invocation": "display a long listing of all the log files in the current folder which are bigger than 1MB",
-        "cmd": "find . -size +1000k -name *.log -print0 | xargs -0 ls \u2013lSh"
+        "cmd": "find . -size +1000k -name *.log -print0 | xargs -0 ls -lSh"
     },
     "8372": {
         "invocation": "display a long listing of all the normal/regular files in the current folder (print0 is used to handle files which have newlines in their names or files with the name only as spaces )",
@@ -33605,7 +33605,7 @@
     },
     "8402": {
         "invocation": "display all files  expect directories in the current folder",
-        "cmd": "find . ! \u2014 type d -print"
+        "cmd": "find . ! -type d -print"
     },
     "8403": {
         "invocation": "display all files ending with \".ext\" in current folder and append the file contents of list.txt and sort them based on name and display only uniq items",
@@ -33693,11 +33693,11 @@
     },
     "8424": {
         "invocation": "display all files in the current folder along with their last access timestamps",
-        "cmd": "find . -printf \"%h/%f : dernier acc\u00e8s le %Ac\\n\""
+        "cmd": "find . -printf \"%h/%f : last access %Ac\\n\""
     },
     "8425": {
         "invocation": "display all files in the current folder along with their last accessed timestamps",
-        "cmd": "find . -printf \"%h/%f : dernier acc\u00e8s le %AA %Ad %AB %AY \u00e0 %AH:%AM:%AS\\n\""
+        "cmd": "find . -printf \"%h/%f : last access %AA %Ad %AB %AY at %AH:%AM:%AS\\n\""
     },
     "8426": {
         "invocation": "display all files in the current folder and do not search in the sub directories",
@@ -33813,7 +33813,7 @@
     },
     "8454": {
         "invocation": "display all mp3 files in the file system which have not been accessed in the last 24 hours",
-        "cmd": "find / -name \u201c*.mp3\u201d -atime +01 -type f"
+        "cmd": "find / -name \"*.mp3\" -atime +01 -type f"
     },
     "8455": {
         "invocation": "display all non empty directories in current folder",
@@ -34325,7 +34325,7 @@
     },
     "8582": {
         "invocation": "display all the files in the current folder along with the hidden files with the depth",
-        "cmd": "find . \u2014 name \"*\" \u2014 print -\u043e -name \".*\" \u2014 print -depth"
+        "cmd": "find . -name \"*\" -print -o -name \".*\" -print -depth"
     },
     "8583": {
         "invocation": "display all the files in the current folder along with the modification time and display file names of the last 10 modified files",
@@ -34333,7 +34333,7 @@
     },
     "8584": {
         "invocation": "display all the files in the current folder and do not search in sub directories and move them to the directory /directory1/directory2.",
-        "cmd": "find . -maxdepth 1 -type f | xargs -I \u2018{}\u2019 sudo mv {} /directory1/directory2"
+        "cmd": "find . -maxdepth 1 -type f | xargs -I '{}' sudo mv {} /directory1/directory2"
     },
     "8585": {
         "invocation": "display all the files in the current folder and traverse from the sub directories",
@@ -34461,7 +34461,7 @@
     },
     "8616": {
         "invocation": "display all the files in the current folder which have been modified between two dates",
-        "cmd": "find . -newermt \u201cSep 1 2006\u201d -and \\! -newermt \u201cSep 10 2006\u201d"
+        "cmd": "find . -newermt \"Sep 1 2006\" -and \\! -newermt \"Sep 10 2006\""
     },
     "8617": {
         "invocation": "display all the files in the current folder which have been modified in one hour ago",
@@ -34521,7 +34521,7 @@
     },
     "8631": {
         "invocation": "display all the files in the entire file system",
-        "cmd": "find / -name \"*\" \u2014 print"
+        "cmd": "find / -name \"*\" -print"
     },
     "8632": {
         "invocation": "display all the files in the entire file system",
@@ -35013,7 +35013,7 @@
     },
     "8754": {
         "invocation": "display all the text files and hidden files in the home folder",
-        "cmd": "find ~ -name \"*.txt\" \u2014 print -o -name \".*\" \u2014 print"
+        "cmd": "find ~ -name \"*.txt\" -print -o -name \".*\" -print"
     },
     "8755": {
         "invocation": "display all the text files and pdf files in the current folder",
@@ -35037,7 +35037,7 @@
     },
     "8760": {
         "invocation": "display all the text files in the current folder",
-        "cmd": "find -name \u201c*.txt\u201d"
+        "cmd": "find -name \"*.txt\""
     },
     "8761": {
         "invocation": "display all the text files in the current folder  and do not search in the bin directory",
@@ -35185,7 +35185,7 @@
     },
     "8797": {
         "invocation": "display long listing of all the regular hidden files in the folder Musica",
-        "cmd": "find M\u00fasica/* -type f -name \".*\" -exec ls -l {} \\;"
+        "cmd": "find Musica/* -type f -name \".*\" -exec ls -l {} \\;"
     },
     "8798": {
         "invocation": "display long listing of all the symbolic links in the current folder",
@@ -35257,7 +35257,7 @@
     },
     "8815": {
         "invocation": "display the count of all the directories in the current folder",
-        "cmd": "find . -type d \u2013print | wc -l"
+        "cmd": "find . -type d -print | wc -l"
     },
     "8816": {
         "invocation": "display the count of all the directories present in a folder",
@@ -35333,7 +35333,7 @@
     },
     "8834": {
         "invocation": "display the list of all the normal files excluding hidden files which have been accessed in the last 500 days",
-        "cmd": "find . -type f -not -name \u2018.*\u2019 -mtime +500 -exec ls {} \\;"
+        "cmd": "find . -type f -not -name '.*' -mtime +500 -exec ls {} \\;"
     },
     "8835": {
         "invocation": "display the list of all the text files present in the current directory excluding the search in certain paths.",
@@ -35409,7 +35409,7 @@
     },
     "8853": {
         "invocation": "display the sum of disk used by all the access.log files in /var/www folder",
-        "cmd": "find /var/www/ -type f -name \u00abaccess.log*\u00bb -exec du -k {} \\;|awk '{s+=$1}END{print s}'"
+        "cmd": "find /var/www/ -type f -name 'access.log*' -exec du -k {} \\;|awk '{s+=$1}END{print s}'"
     },
     "8854": {
         "invocation": "display the three largest files by size in current folder",
@@ -35421,7 +35421,7 @@
     },
     "8856": {
         "invocation": "display the top 20 biggest files in the current folder which are present in the same partition as that of the current folder",
-        "cmd": "find . -xdev -printf \u2018%s %p\\n\u2019 |sort -nr|head -20"
+        "cmd": "find . -xdev -printf '%s %p\\n' |sort -nr|head -20"
     },
     "8857": {
         "invocation": "display the type of all the regular/normal files in the entire file system",
@@ -35724,8 +35724,8 @@
         "cmd": "find . -name \"*.css\" -exec sed -i -r 's/#(FF0000|F00)\\b/#0F0/' {} \\;"
     },
     "8932": {
-        "invocation": "find all PDFs owned by user \u201cseamstress\u201d",
-        "cmd": "find / -user seamstress -iname \u201c*.pdf\u201d"
+        "invocation": "find all PDFs owned by user \"seamstress\"",
+        "cmd": "find / -user seamstress -iname \"*.pdf\""
     },
     "8933": {
         "invocation": "find all c, cpp files in current folder",
@@ -36029,7 +36029,7 @@
     },
     "9008": {
         "invocation": "find all files in the current folder which are bigger than 10bytes",
-        "cmd": "find . \u2014 size +10 -print"
+        "cmd": "find . -size +10 -print"
     },
     "9009": {
         "invocation": "find all files in the current folder which are of size 0 bytes.",
@@ -36185,7 +36185,7 @@
     },
     "9047": {
         "invocation": "find all files starting with capital letter in the current folder",
-        "cmd": "find . \u2014 name \"[A\u2011Z]*\" \u2014 print"
+        "cmd": "find . -name \"[A-Z]*\" -print"
     },
     "9048": {
         "invocation": "find all files that are readable and writable by their owner",
@@ -36268,7 +36268,7 @@
         "cmd": "find . -name '*song*abc2009*.jpg' | sed 's/\\(^.*song.*\\)abc2009\\(.*.jpg\\)$/mv \"&\" \"\\1def2010\\2\"/' | sh"
     },
     "9068": {
-        "invocation": "find all files with the first letter \u201ce\u201d or \u201cf\u201d and last one x in /usr/bin directory:",
+        "invocation": "find all files with the first letter \"e\" or \"f\" and last one x in /usr/bin directory:",
         "cmd": "find /usr/bin -name [ef]*x"
     },
     "9069": {
@@ -36389,7 +36389,7 @@
     },
     "9098": {
         "invocation": "find all pdf files in the current folder",
-        "cmd": "find . -name \u201c*.pdf\u201d -print"
+        "cmd": "find . -name \"*.pdf\" -print"
     },
     "9099": {
         "invocation": "find all php files in the folder  /var/www/",
@@ -36521,7 +36521,7 @@
     },
     "9131": {
         "invocation": "find all text files in current folder; which have been modified exactly 5 days ago",
-        "cmd": "find . \u2013name \"*.txt\" \u2013mtime 5"
+        "cmd": "find . -name \"*.txt\" -mtime 5"
     },
     "9132": {
         "invocation": "find all text files in the current directory",
@@ -36613,7 +36613,7 @@
     },
     "9154": {
         "invocation": "find all the backup files in the current folder and delete them",
-        "cmd": "find . -type f -name \u201cFILE-TO-FIND\u201d -delete;"
+        "cmd": "find . -type f -name \"FILE-TO-FIND\" -delete;"
     },
     "9155": {
         "invocation": "find all the backup files in the current folder and delete them after user confirmation",
@@ -36781,11 +36781,11 @@
     },
     "9196": {
         "invocation": "find all the directories starting with the name \"someNamePrefix\" which have not been modified in the last 10 days and force delete them",
-        "cmd": "find /somePath -type d -name \u2018someNamePrefix*\u2019 -mtime +10 -print | xargs rm -rf ;"
+        "cmd": "find /somePath -type d -name 'someNamePrefix*' -mtime +10 -print | xargs rm -rf ;"
     },
     "9197": {
         "invocation": "find all the directories with the name \"DIRNAME\" in the current folder and force delete them",
-        "cmd": "find . -type d -name \u201cDIRNAME\u201d -exec rm -rf {} \\;"
+        "cmd": "find . -type d -name \"DIRNAME\" -exec rm -rf {} \\;"
     },
     "9198": {
         "invocation": "find all the directories with the name \"some-dir\" in the current folder and move them to another folder and do not search in subfolders",
@@ -37117,7 +37117,7 @@
     },
     "9280": {
         "invocation": "find all the files in the current folder which are bigger than 1MB",
-        "cmd": "find . \u2014 size +1000k -print"
+        "cmd": "find . -size +1000k -print"
     },
     "9281": {
         "invocation": "find all the files in the current folder which are bigger than 9MB",
@@ -37245,7 +37245,7 @@
     },
     "9312": {
         "invocation": "find all the files in the current folder whose name starts with 2 alphabets and ends with 2 digits.",
-        "cmd": "find . \u2014 name \"[a\u2011z][a\u2011z][0\u20149][0\u20149].txt\" \u2014 print"
+        "cmd": "find . -name \"[a-z][a-z][0-9][0-9].txt\" -print"
     },
     "9313": {
         "invocation": "find all the files in the current folder with the name \"test-a\" and move them to the folder test-10",
@@ -37465,7 +37465,7 @@
     },
     "9367": {
         "invocation": "find all the files in the folder /path/to/dir which have been modified after a specific date (Feb 07)",
-        "cmd": "find /path/to/dir -newermt \u201cFeb 07\u201d"
+        "cmd": "find /path/to/dir -newermt \"Feb 07\""
     },
     "9368": {
         "invocation": "find all the files in the folder /usr/bin which have been modified in the last 10 days",
@@ -37477,7 +37477,7 @@
     },
     "9370": {
         "invocation": "find all the files in the folder Musica and display them in a single line null separated",
-        "cmd": "find M\u00fasica/* | egrep -Z \\/\\\\. | xargs -0 echo"
+        "cmd": "find Musica/* | egrep -Z \\/\\\\. | xargs -0 echo"
     },
     "9371": {
         "invocation": "find all the files in the folder ~/Music which begin with \"Automatically Add\"",
@@ -37985,7 +37985,7 @@
     },
     "9497": {
         "invocation": "find all the php files in the current folder",
-        "cmd": "find . -name \u201c*.[php|PHP]\u201d -print"
+        "cmd": "find . -name \"*.[php|PHP]\" -print"
     },
     "9498": {
         "invocation": "find all the php files in the current folder (discards any directory which has an extension of \".php\")",
@@ -38165,7 +38165,7 @@
     },
     "9542": {
         "invocation": "find all the text files in the current folder",
-        "cmd": "find . \u2014 name \"*.txt\" \u2014 print"
+        "cmd": "find . -name \"*.txt\" -print"
     },
     "9543": {
         "invocation": "find all the text files in the current folder and display the results pagewise",
@@ -38205,11 +38205,11 @@
     },
     "9552": {
         "invocation": "find all the text files in the folder /home/calvin and do not search beyond 2 levels",
-        "cmd": "find /home/calvin/ -maxdepth 2  -name \u201c*.txt\u201d"
+        "cmd": "find /home/calvin/ -maxdepth 2  -name \"*.txt\""
     },
     "9553": {
         "invocation": "find all the text files in the folder /home/calvin which are atleast below 2 levels",
-        "cmd": "find /home/calvin/ -mindepth 2  -name \u201c*.txt\u201d"
+        "cmd": "find /home/calvin/ -mindepth 2  -name \"*.txt\""
     },
     "9554": {
         "invocation": "find all the text files in the home directory",
@@ -38217,11 +38217,11 @@
     },
     "9555": {
         "invocation": "find all the text files in the home folder",
-        "cmd": "find ~ -name \"*.txt\" \u2014 print"
+        "cmd": "find ~ -name \"*.txt\" -print"
     },
     "9556": {
         "invocation": "find all the text files in the temp folder and search for the word hello in all these files and display the matched files",
-        "cmd": "find /tmp -type f -name \u2018*.txt*\u2019 | sed -e \u2018s/.*/\\\u201d&\\\u201d/\u2019 |xargs -n 1 grep -l hello|sed -e \u2018s/.*/\\\u201d&\\\u201d/\u2019"
+        "cmd": "find /tmp -type f -name '*.txt*' | sed -e 's/.*/\\\"&\\\"/' |xargs -n 1 grep -l hello|sed -e 's/.*/\\\"&\\\"/'"
     },
     "9557": {
         "invocation": "find all the text files present in the current directory excluding the search in certain paths.",
@@ -38464,11 +38464,11 @@
         "cmd": "find -iname \"filename\""
     },
     "9617": {
-        "invocation": "find files in the current directory with pattern` '*.[ch]' which are contain \u2018thing\u2019 string and print file names",
+        "invocation": "find files in the current directory with pattern` '*.[ch]' which are contain 'thing' string and print file names",
         "cmd": "find . -name '*.[ch]' | xargs grep -l thing"
     },
     "9618": {
-        "invocation": "find files in the current directory with pattern` '*.[ch]' which are contain \u2018thing\u2019 string and print file names which can contain spaces",
+        "invocation": "find files in the current directory with pattern` '*.[ch]' which are contain 'thing' string and print file names which can contain spaces",
         "cmd": "find . -name '*.[ch]' -print0 | xargs -r -0 grep -l thing"
     },
     "9619": {
@@ -38601,7 +38601,7 @@
     },
     "9651": {
         "invocation": "find md5sum of 401",
-        "cmd": "yosemite$ echo -n 401 | md5"
+        "cmd": "echo -n 401 | md5"
     },
     "9652": {
         "invocation": "find md5sum of an empty string",
@@ -38885,7 +38885,7 @@
     },
     "9722": {
         "invocation": "force delete all the regular files with the name \"test.txt\"",
-        "cmd": "find /home -type f -name test.txt -exec rm -f {} \\"
+        "cmd": "find /home -type f -name test.txt -exec rm -f {} \\;"
     },
     "9723": {
         "invocation": "force delete all the regular/normal files in the current folder",
@@ -39080,7 +39080,7 @@
         "cmd": "find . -type f \\( -name \"*.c\" -o -name \"*.sh\" \\)"
     },
     "9771": {
-        "invocation": "list all CSS files (and directories ending with \u201c.css\u201d) under the current directory",
+        "invocation": "list all CSS files (and directories ending with \".css\") under the current directory",
         "cmd": "find . -name \"*.css\""
     },
     "9772": {
@@ -39492,7 +39492,7 @@
         "cmd": "tac file | sed -n '0,/<tag>\\(.*\\)<\\/tag>/s//\\1/p'"
     },
     "9874": {
-        "invocation": "prints the names of all files in the directory tree rooted in /usr/src whose name ends with \u2018.c\u2019 and that are larger than 100 Kilobytes.",
+        "invocation": "prints the names of all files in the directory tree rooted in /usr/src whose name ends with '.c' and that are larger than 100 Kilobytes.",
         "cmd": "find /usr/src -name '*.c' -size +100k -print"
     },
     "9875": {
@@ -39657,7 +39657,7 @@
     },
     "9915": {
         "invocation": "remove all the core files in the current directory",
-        "cmd": "/bin/find -name \"core\" \u2014 exec rm {} \\;"
+        "cmd": "find -name \"core\" -exec rm {} \\;"
     },
     "9916": {
         "invocation": "remove all the core files in the home folder",
@@ -39745,7 +39745,7 @@
     },
     "9937": {
         "invocation": "replace \"exp_to_find_for_replacement\" with \"exp_to_replace\" for all the files in the current folder",
-        "cmd": "find -name \u2018*exp_to_find_in_folders*\u2019 -exec rename \u201cs/exp_to_find_for_replacement/exp_to_replace/\u201d {} \\;"
+        "cmd": "find -name '*exp_to_find_in_folders*' -exec rename \"s/exp_to_find_for_replacement/exp_to_replace/\" {} \\;"
     },
     "9938": {
         "invocation": "replace a word in all the regular/normal files in the current folder(doesn't actually modify the original file just displays the replaced text)",
@@ -39945,7 +39945,7 @@
     },
     "9987": {
         "invocation": "search for \"specified string\" in all the php files in the current folder",
-        "cmd": "find . -name \u201c*.[php|PHP]\u201d -print | xargs grep -HnT \u201cspecified string\u201d"
+        "cmd": "find . -name \"*.[php|PHP]\" -print | xargs grep -HnT \"specified string\""
     },
     "9988": {
         "invocation": "search for *.log files starting from /",
@@ -40013,7 +40013,7 @@
     },
     "10004": {
         "invocation": "search for a word in all the .C files( those having the extension \"c\") in current directory",
-        "cmd": "find . -type f \\( -iname \u201c*.c\u201d \\) |grep -i -r \u201ckeyword\u201d"
+        "cmd": "find . -type f \\( -iname \"*.c\" \\) |grep -i -r \"keyword\""
     },
     "10005": {
         "invocation": "search for a word in all the fies in the current folder",
@@ -40125,7 +40125,7 @@
     },
     "10032": {
         "invocation": "search for all \"tif\" images in the entire file system",
-        "cmd": "find / -name '*.tif ' \u2013print"
+        "cmd": "find / -name '*.tif ' -print"
     },
     "10033": {
         "invocation": "search for all Scala files under the current directory that contain the string null",
@@ -40317,7 +40317,7 @@
     },
     "10080": {
         "invocation": "search for all the jpg files in the folder \"/mnt/hda1/zdjecia/test1/\" and copy these files to the folder  /mnt/hda1/test/<same name as the found file>",
-        "cmd": "find /mnt/hda1/zdjecia/test1/ -iname \u201c*.jpg\u201d -type f -exec cp {} -rv /mnt/hda1/test{} \u2018;\u2019"
+        "cmd": "find /mnt/hda1/zdjecia/test1/ -iname \"*.jpg\" -type f -exec cp {} -rv /mnt/hda1/test{} ';'"
     },
     "10081": {
         "invocation": "search for all the log files in the folder /apps which have not been modified in the last 60 days and which are present in the same file system as that of /apps and delete them",
@@ -40329,7 +40329,7 @@
     },
     "10083": {
         "invocation": "search for all the mp3 files in the folder /home/you which have been accessed 24 ago",
-        "cmd": "find /home/you -iname \u201c*.mp3\u201d -atime 01 -type -f"
+        "cmd": "find /home/you -iname \"*.mp3\" -atime 01 -type -f"
     },
     "10084": {
         "invocation": "search for all the non-hidden files in the current directory and do not search in the subfolders and dispaly their name and size.",
@@ -40365,7 +40365,7 @@
     },
     "10092": {
         "invocation": "search for all the regular/normal files with the name \"access.log\" in the folder /var/www which are bigger than 100MB",
-        "cmd": "find /var/www -type f -name \u00abaccess.log*\u00bb -size +100M"
+        "cmd": "find /var/www -type f -name 'access.log*' -size +100M"
     },
     "10093": {
         "invocation": "search for all the regular/normal mp3 files in the file system and move them to the folder /mnt/mp3",
@@ -40537,7 +40537,7 @@
     },
     "10135": {
         "invocation": "search for text files in the folders /home/hobbes/ /home/calvin/",
-        "cmd": "find /home/hobbes/ /home/calvin/ -name \u201c*.txt\u201d"
+        "cmd": "find /home/hobbes/ /home/calvin/ -name \"*.txt\""
     },
     "10136": {
         "invocation": "search for the directory \"config\" in the current folder",
@@ -40673,7 +40673,7 @@
     },
     "10169": {
         "invocation": "search for the file in the entire file system which has the words \"filename\" in its name",
-        "cmd": "find / -name \u201d*filename*\u201d"
+        "cmd": "find / -name \"*filename*\""
     },
     "10170": {
         "invocation": "search for the file job.hostory in the folder \"/data/Spoolln\"",
@@ -40681,7 +40681,7 @@
     },
     "10171": {
         "invocation": "search for the file picasso in the folder /home/calvin/ (case insensitive search)",
-        "cmd": "find /home/calvin/ -iname \u201cpicasso\u201d"
+        "cmd": "find /home/calvin/ -iname \"picasso\""
     },
     "10172": {
         "invocation": "search for the file test in the current folder",
@@ -40741,7 +40741,7 @@
     },
     "10186": {
         "invocation": "search for the host \"slc02oxm.us.oracle.com\" in all the xml files in the current folder and display the files which has the matched content",
-        "cmd": "find -name \u201c*.xml\u201d -exec grep -l \u201cslc02oxm.us.oracle.com\u201d {} \\;"
+        "cmd": "find -name \"*.xml\" -exec grep -l \"slc02oxm.us.oracle.com\" {} \\;"
     },
     "10187": {
         "invocation": "search for the ip \"192.168.1.5\" in all the files in /etc folder",
@@ -40777,7 +40777,7 @@
     },
     "10195": {
         "invocation": "search for the regulars file starting with HSTD which have been modified yesterday from day start and copy them to /path/tonew/dir",
-        "cmd": "find . -type f -iname \u2018HSTD*\u2019 -daystart -mtime 1 -exec cp {} /path/to new/dir/ \\;"
+        "cmd": "find . -type f -iname 'HSTD*' -daystart -mtime 1 -exec cp {} /path/to new/dir/ \\;"
     },
     "10196": {
         "invocation": "search for the word \"damian\" in all the regular/normal files in the /etc folder and display only the matched file name",
@@ -40825,7 +40825,7 @@
     },
     "10207": {
         "invocation": "search for the word \"redeem reward\" in all the regular/normal files in the current folder",
-        "cmd": "find . -type f -exec grep -i \u201credeem reward\u201d {} \\; -print"
+        "cmd": "find . -type f -exec grep -i \"redeem reward\" {} \\; -print"
     },
     "10208": {
         "invocation": "search for the word \"search-pattern\" in all the regular/normal files in the current folder and display the matched file name",
@@ -40865,7 +40865,7 @@
     },
     "10217": {
         "invocation": "search for the word hello in all the text files in the temp folder and delete them",
-        "cmd": "find /tmp -type f -name \u2018*.txt*\u2019 | sed -e \u2018s/.*/\\\u201d&\\\u201d/\u2019 |xargs -n 1 grep -l hello|sed -e \u2018s/.*/\\\u201d&\\\u201d/\u2019|xargs -n 1 rm -f"
+        "cmd": "find /tmp -type f -name '*.txt*' | sed -e 's/.*/\\\"&\\\"/' |xargs -n 1 grep -l hello|sed -e 's/.*/\\\"&\\\"/'|xargs -n 1 rm -f"
     },
     "10218": {
         "invocation": "search for the word text in all the python files in the current folder",
@@ -41053,7 +41053,7 @@
     },
     "10264": {
         "invocation": "show all the files in the current folder which has the word \"ITM\"",
-        "cmd": "find . -name \u2018*ITM*\u2019"
+        "cmd": "find . -name '*ITM*'"
     },
     "10265": {
         "invocation": "show all the files in the entire file system which are bigger than 1.1GB",
@@ -41341,7 +41341,7 @@
     },
     "10336": {
         "invocation": "update the permissions of the directories in the folder folder_name to 775",
-        "cmd": "find folder_name -type d -exec chmod 775 \u2018{}\u2019 \\;"
+        "cmd": "find folder_name -type d -exec chmod 775 '{}' \\;"
     },
     "10337": {
         "invocation": "use find -exec with multiple commands",

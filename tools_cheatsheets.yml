@@ -1,0 +1,3342 @@
+apropos: '# apropos
+
+  # Search the manual pages for names and descriptions.
+
+  # More information: .
+
+  # Search for a keyword using a regular expression:
+
+  apropos regular_expression
+
+  # Search without restricting the output to the terminal width:
+
+  apropos -l regular_expression
+
+  # Search for pages that contain all the expressions given:
+
+  apropos regular_expression_1 -a regular_expression_2 -a regular_expression_3
+
+  '
+awk: '# awk
+
+  # A versatile programming language for working on files.
+
+  # More information: .
+
+  # Print the fifth column (a.k.a. field) in a space-separated file:
+
+  awk ''{print $5}'' path/to/file
+
+  # Print the second column of the lines containing "foo" in a space-separated file:
+
+  awk ''/foo/ {print $2}'' path/to/file
+
+  # Print the last column of each line in a file, using a comma (instead of space)
+  as a field separator:
+
+  awk -F '','' ''{print $NF}'' path/to/file
+
+  # Sum the values in the first column of a file and print the total:
+
+  awk ''{s+=$1} END {print s}'' path/to/file
+
+  # Print every third line starting from the first line:
+
+  awk ''NR%3==1'' path/to/file
+
+  # Print different values based on conditions:
+
+  awk ''{if ($1 == "foo") print "Exact match foo"; else if ($1 ~ "bar") print "Partial
+  match bar"; else print "Baz"}'' path/to/file
+
+  # Print all lines where the 10th column value equals the specified value:
+
+  awk ''($10 == value)''
+
+  # Print all the lines which the 10th column value is between a min and a max:
+
+  awk ''($10 >= min_value && $10 <= max_value)''
+
+  '
+basename: '# basename
+
+  # Remove leading directory portions from a path.
+
+  # More information: .
+
+  # Show only the file name from a path:
+
+  basename path/to/file
+
+  # Show only the rightmost directory name from a path:
+
+  basename path/to/directory/
+
+  # Show only the file name from a path, with a suffix removed:
+
+  basename path/to/file suffix
+
+  '
+bash: '# bash
+
+  # Bourne-Again SHell, an `sh`-compatible command-line interpreter.
+
+  # See also: `zsh`, `histexpand` (history expansion).
+
+  # More information: .
+
+  # Start an interactive shell session:
+
+  bash
+
+  # Start an interactive shell session without loading startup configs:
+
+  bash --norc
+
+  # Execute specific [c]ommands:
+
+  bash -c "echo ''bash is executed''"
+
+  # Execute a specific script:
+
+  bash path/to/script.sh
+
+  # Execute a specific script while printing each command before executing it:
+
+  bash -x path/to/script.sh
+
+  # Execute a specific script and stop at the first [e]rror:
+
+  bash -e path/to/script.sh
+
+  # Execute specific commands from `stdin`:
+
+  echo "echo ''bash is executed''" | bash
+
+  '
+bg: '# bg
+
+  # Resumes jobs that have been suspended (e.g. using `Ctrl + Z`), and keeps them
+  running in the background.
+
+  # More information: .
+
+  # Resume the most recently suspended job and run it in the background:
+
+  bg
+
+  # Resume a specific job (use `jobs -l` to get its ID) and run it in the background:
+
+  bg %job_id
+
+  '
+bind: "Unknown topic.\nDo you mean one of these topics maybe?\n    * bird 75\n   \
+  \ * find 75\n    * kind 75\n    \n"
+bunzip2: "Unknown topic.\nDo you mean one of these topics maybe?\n    * bzip2 83\n\
+  \    * unzip 83\n    * funzip 77\n    \n"
+bzip2: '# bzip2
+
+  # A block-sorting file compressor.
+
+  # More information: .
+
+  # Compress a file:
+
+  bzip2 path/to/file_to_compress
+
+  # Decompress a file:
+
+  bzip2 -d path/to/compressed_file.bz2
+
+  # Decompress a file to standard output:
+
+  bzip2 -dc path/to/compressed_file.bz2
+
+  # Test the integrity of each file inside the archive file:
+
+  bzip2 --test path/to/compressed_file.bz2
+
+  # Show the compression ratio for each file processed with detailed information:
+
+  bzip2 --verbose path/to/compressed_files.bz2
+
+  # Decompress a file overwriting existing files:
+
+  bzip2 --force path/to/compressed_file.bz2
+
+  # Display help:
+
+  bzip2 -h
+
+  '
+cal: '# cal
+
+  # Prints calendar information, with the current day highlighted.
+
+  # More information: .
+
+  # Display a calendar for the current month:
+
+  cal
+
+  # Display previous, current and next month:
+
+  cal -3
+
+  # Use Monday as the first day of the week:
+
+  cal --monday
+
+  # Display a calendar for a specific year (4 digits):
+
+  cal year
+
+  # Display a calendar for a specific month and year:
+
+  cal month year
+
+  '
+cat: '# cat
+
+  # Print and concatenate files.
+
+  # More information: .
+
+  # Print the contents of a file to the standard output:
+
+  cat path/to/file
+
+  # Concatenate several files into an output file:
+
+  cat path/to/file1 path/to/file2 ... > path/to/output_file
+
+  # Append several files to an output file:
+
+  cat path/to/file1 path/to/file2 ... >> path/to/output_file
+
+  # Copy the contents of a file into an output file without buffering:
+
+  cat -u /dev/tty12 > /dev/tty13
+
+  # Write `stdin` to a file:
+
+  cat - > path/to/file
+
+  '
+cd: '# cd
+
+  # Change the current working directory.
+
+  # More information: .
+
+  # Go to the specified directory:
+
+  cd path/to/directory
+
+  # Go up to the parent of the current directory:
+
+  cd ..
+
+  # Go to the home directory of the current user:
+
+  cd
+
+  # Go to the home directory of the specified user:
+
+  cd ~username
+
+  # Go to the previously chosen directory:
+
+  cd -
+
+  # Go to the root directory:
+
+  cd /
+
+  '
+chgrp: '# chgrp
+
+  # Change group ownership of files and directories.
+
+  # More information: .
+
+  # Change the owner group of a file/directory:
+
+  chgrp group path/to/file_or_directory
+
+  # Recursively change the owner group of a directory and its contents:
+
+  chgrp -R group path/to/directory
+
+  # Change the owner group of a symbolic link:
+
+  chgrp -h group path/to/symlink
+
+  # Change the owner group of a file/directory to match a reference file:
+
+  chgrp --reference=path/to/reference_file path/to/file_or_directory
+
+  '
+chmod: '# chmod
+
+  # Change the access permissions of a file or directory.
+
+  # More information: .
+
+  # Give the [u]ser who owns a file the right to e[x]ecute it:
+
+  chmod u+x path/to/file
+
+  # Give the [u]ser rights to [r]ead and [w]rite to a file/directory:
+
+  chmod u+rw path/to/file_or_directory
+
+  # Remove e[x]ecutable rights from the [g]roup:
+
+  chmod g-x path/to/file
+
+  # Give [a]ll users rights to [r]ead and e[x]ecute:
+
+  chmod a+rx path/to/file
+
+  # Give [o]thers (not in the file owner''s group) the same rights as the [g]roup:
+
+  chmod o=g path/to/file
+
+  # Remove all rights from [o]thers:
+
+  chmod o= path/to/file
+
+  # Change permissions recursively giving [g]roup and [o]thers the ability to [w]rite:
+
+  chmod -R g+w,o+w path/to/directory
+
+  # Recursively give [a]ll users [r]ead permissions to files and e[X]ecute permissions
+  to sub-directories within a directory:
+
+  chmod -R a+rX path/to/directory
+
+  '
+chown: '# chown
+
+  # Change user and group ownership of files and directories.
+
+  # More information: .
+
+  # Change the owner user of a file/directory:
+
+  chown user path/to/file_or_directory
+
+  # Change the owner user and group of a file/directory:
+
+  chown user:group path/to/file_or_directory
+
+  # Recursively change the owner of a directory and its contents:
+
+  chown -R user path/to/directory
+
+  # Change the owner of a symbolic link:
+
+  chown -h user path/to/symlink
+
+  # Change the owner of a file/directory to match a reference file:
+
+  chown --reference=path/to/reference_file path/to/file_or_directory
+
+  '
+clear: '# clear
+
+  # Clears the screen of the terminal.
+
+  # More information: .
+
+  # Clear the screen (equivalent to pressing Control-L in Bash shell):
+
+  clear
+
+  # Clear the screen but keep the terminal''s scrollback buffer:
+
+  clear -x
+
+  # Indicate the type of terminal to clean (defaults to the value of the environment
+  variable `TERM`):
+
+  clear -T type_of_terminal
+
+  # Show the version of `ncurses` used by `clear`:
+
+  clear -V
+
+  '
+column: '# column
+
+  # Format standard input or a file into multiple columns.
+
+  # Columns are filled before rows; the default separator is a whitespace.
+
+  # More information: .
+
+  # Format the output of a command for a 30 characters wide display:
+
+  printf "header1 header2\nbar foo\n" | column --output-width 30
+
+  # Split columns automatically and auto-align them in a tabular format:
+
+  printf "header1 header2\nbar foo\n" | column --table
+
+  # Specify the column delimiter character for the `--table` option (e.g. "," for
+  CSV) (defaults to whitespace):
+
+  printf "header1,header2\nbar,foo\n" | column --table --separator ,
+
+  # Fill rows before filling columns:
+
+  printf "header1\nbar\nfoobar\n" | column --output-width 30 --fillrows
+
+  '
+comm: '# comm
+
+  # Select or reject lines common to two files. Both files must be sorted.
+
+  # More information: .
+
+  # Produce three tab-separated columns: lines only in first file, lines only in second
+  file and common lines:
+
+  comm file1 file2
+
+  # Print only lines common to both files:
+
+  comm -12 file1 file2
+
+  # Print only lines common to both files, reading one file from `stdin`:
+
+  cat file1 | comm -12 - file2
+
+  # Get lines only found in first file, saving the result to a third file:
+
+  comm -23 file1 file2 > file1_only
+
+  # Print lines only found in second file, when the files aren''t sorted:
+
+  comm -13 <(sort file1) <(sort file2)
+
+  '
+cp: '# cp
+
+  # Copy files and directories.
+
+  # More information: .
+
+  # Copy a file to another location:
+
+  cp path/to/source_file.ext path/to/target_file.ext
+
+  # Copy a file into another directory, keeping the filename:
+
+  cp path/to/source_file.ext path/to/target_parent_directory
+
+  # Recursively copy a directory''s contents to another location (if the destination
+  exists, the directory is copied inside it):
+
+  cp -R path/to/source_directory path/to/target_directory
+
+  # Copy a directory recursively, in verbose mode (shows files as they are copied):
+
+  cp -vR path/to/source_directory path/to/target_directory
+
+  # Copy multiple files at once to a directory:
+
+  cp -t path/to/destination_directory path/to/file1 path/to/file2 ...
+
+  # Copy text files to another location, in interactive mode (prompts user before
+  overwriting):
+
+  cp -i *.txt path/to/target_directory
+
+  # Follow symbolic links before copying:
+
+  cp -L link path/to/target_directory
+
+  # Use the first argument as the destination directory (useful for `xargs ... | cp
+  -t <DEST_DIR>`):
+
+  cp -t path/to/target_directory path/to/file_or_directory1 path/to/file_or_directory2
+  ...
+
+  '
+cpio: '# cpio
+
+  # Copies files in and out of archives.
+
+  # Supports the following archive formats: cpio''s custom binary, old ASCII, new
+  ASCII, crc, HPUX binary, HPUX old ASCII, old tar, and POSIX.1 tar.
+
+  # More information: .
+
+  # Take a list of file names from standard input and add them [o]nto an archive in
+  cpio''s binary format:
+
+  echo "file1 file2 file3" | cpio -o > archive.cpio
+
+  # Copy all files and directories in a directory and add them [o]nto an archive,
+  in [v]erbose mode:
+
+  find path/to/directory | cpio -ov > archive.cpio
+
+  # P[i]ck all files from an archive, generating [d]irectories where needed, in [v]erbose
+  mode:
+
+  cpio -idv < archive.cpio
+
+  '
+crontab: '# crontab
+
+  # Schedule cron jobs to run on a time interval for the current user.
+
+  # More information: .
+
+  # Edit the crontab file for the current user:
+
+  crontab -e
+
+  # Edit the crontab file for a specific user:
+
+  sudo crontab -e -u user
+
+  # Replace the current crontab with the contents of the given file:
+
+  crontab path/to/file
+
+  # View a list of existing cron jobs for current user:
+
+  crontab -l
+
+  # Remove all cron jobs for the current user:
+
+  crontab -r
+
+  # Sample job which runs at 10:00 every day (* means any value):
+
+  0 10 * * * command_to_execute
+
+  # Sample crontab entry, which runs a command every 10 minutes:
+
+  */10 * * * * command_to_execute
+
+  # Sample crontab entry, which runs a certain script at 02:30 every Friday:
+
+  30 2 * * Fri /absolute/path/to/script.sh
+
+  '
+curl: '# curl
+
+  # Transfers data from or to a server.
+
+  # Supports most protocols, including HTTP, FTP, and POP3.
+
+  # More information: .
+
+  # Download the contents of a URL to a file:
+
+  curl http://example.com --output path/to/file
+
+  # Download a file, saving the output under the filename indicated by the URL:
+
+  curl --remote-name http://example.com/filename
+
+  # Download a file, following location redirects, and automatically continuing (resuming)
+  a previous file transfer and return an error on server error:
+
+  curl --fail --remote-name --location --continue-at - http://example.com/filename
+
+  # Send form-encoded data (POST request of type `application/x-www-form-urlencoded`).
+  Use `--data @file_name` or `--data @''-''` to read from STDIN:
+
+  curl --data ''name=bob'' http://example.com/form
+
+  # Send a request with an extra header, using a custom HTTP method:
+
+  curl --header ''X-My-Header: 123'' --request PUT http://example.com
+
+  # Send data in JSON format, specifying the appropriate content-type header:
+
+  curl --data ''{"name":"bob"}'' --header ''Content-Type: application/json'' http://example.com/users/1234
+
+  # Pass a username and password for server authentication:
+
+  curl --user myusername:mypassword http://example.com
+
+  # Pass client certificate and key for a resource, skipping certificate validation:
+
+  curl --cert client.pem --key key.pem --insecure https://example.com
+
+  '
+cut: '# cut
+
+  # Cut out fields from `stdin` or files.
+
+  # More information: .
+
+  # Print a specific character/field range of each line:
+
+  command | cut --characters|fields=1|1,10|1-10|1-|-10
+
+  # Print a range of each line with a specific delimiter:
+
+  command | cut --delimiter="," --fields=1
+
+  # Print a range of each line of the specific file:
+
+  cut --characters=1 path/to/file
+
+  '
+date: '# date
+
+  # Set or display the system date.
+
+  # More information: .
+
+  # Display the current date using the default locale''s format:
+
+  date +%c
+
+  # Display the current date in UTC, using the ISO 8601 format:
+
+  date -u +%Y-%m-%dT%H:%M:%S%Z
+
+  # Display the current date as a Unix timestamp (seconds since the Unix epoch):
+
+  date +%s
+
+  # Convert a date specified as a Unix timestamp to the default format:
+
+  date -d @1473305798
+
+  # Convert a given date to the Unix timestamp format:
+
+  date -d "2018-09-01 00:00" +%s --utc
+
+  # Display the current date using the RFC-3339 format (`YYYY-MM-DD hh:mm:ss TZ`):
+
+  date --rfc-3339=s
+
+  # Set the current date using the format `MMDDhhmmYYYY.ss` (`YYYY` and `.ss` are
+  optional):
+
+  date 093023592021.59
+
+  # Display the current ISO week number:
+
+  date +%V
+
+  '
+df: '# df
+
+  # Gives an overview of the filesystem disk space usage.
+
+  # More information: .
+
+  # Display all filesystems and their disk usage:
+
+  df
+
+  # Display all filesystems and their disk usage in human-readable form:
+
+  df -h
+
+  # Display the filesystem and its disk usage containing the given file or directory:
+
+  df path/to/file_or_directory
+
+  # Display statistics on the number of free inodes:
+
+  df -i
+
+  # Display filesystems but exclude the specified types:
+
+  df -x squashfs -x tmpfs
+
+  '
+diff: '# diff
+
+  # Compare files and directories.
+
+  # More information: .
+
+  # Compare files (lists changes to turn `old_file` into `new_file`):
+
+  diff old_file new_file
+
+  # Compare files, ignoring white spaces:
+
+  diff --ignore-all-space old_file new_file
+
+  # Compare files, showing the differences side by side:
+
+  diff --side-by-side old_file new_file
+
+  # Compare files, showing the differences in unified format (as used by `git diff`):
+
+  diff --unified old_file new_file
+
+  # Compare directories recursively (shows names for differing files/directories as
+  well as changes made to files):
+
+  diff --recursive old_directory new_directory
+
+  # Compare directories, only showing the names of files that differ:
+
+  diff --recursive --brief old_directory new_directory
+
+  # Create a patch file for Git from the differences of two text files, treating nonexistent
+  files as empty:
+
+  diff --text --unified --new-file old_file new_file > diff.patch
+
+  '
+dig: '# dig
+
+  # DNS lookup utility.
+
+  # More information: .
+
+  # Lookup the IP(s) associated with a hostname (A records):
+
+  dig +short example.com
+
+  # Get a detailed answer for a given domain (A records):
+
+  dig +noall +answer example.com
+
+  # Query a specific DNS record type associated with a given domain name:
+
+  dig +short example.com A|MX|TXT|CNAME|NS
+
+  # Get all types of records for a given domain name:
+
+  dig example.com ANY
+
+  # Specify an alternate DNS server to query:
+
+  dig @8.8.8.8 example.com
+
+  # Perform a reverse DNS lookup on an IP address (PTR record):
+
+  dig -x 8.8.8.8
+
+  # Find authoritative name servers for the zone and display SOA records:
+
+  dig +nssearch example.com
+
+  # Perform iterative queries and display the entire trace path to resolve a domain
+  name:
+
+  dig +trace example.com
+
+  '
+dirname: '# dirname
+
+  # Calculates the parent directory of a given file or directory path.
+
+  # More information: .
+
+  # Calculate the parent directory of a given path:
+
+  dirname path/to/file_or_directory
+
+  # Calculate the parent directory of multiple paths:
+
+  dirname path/to/file_a path/to/directory_b
+
+  # Delimit output with a NUL character instead of a newline (useful when combining
+  with `xargs`):
+
+  dirname --zero path/to/directory_a path/to/file_b
+
+  '
+du: '# du
+
+  # Disk usage: estimate and summarize file and directory space usage.
+
+  # More information: .
+
+  # List the sizes of a directory and any subdirectories, in the given unit (B/KiB/MiB):
+
+  du -b|k|m path/to/directory
+
+  # List the sizes of a directory and any subdirectories, in human-readable form (i.e.
+  auto-selecting the appropriate unit for each size):
+
+  du -h path/to/directory
+
+  # Show the size of a single directory, in human-readable units:
+
+  du -sh path/to/directory
+
+  # List the human-readable sizes of a directory and of all the files and directories
+  within it:
+
+  du -ah path/to/directory
+
+  # List the human-readable sizes of a directory and any subdirectories, up to N levels
+  deep:
+
+  du -h --max-depth=N path/to/directory
+
+  # List the human-readable size of all `.jpg` files in subdirectories of the current
+  directory, and show a cumulative total at the end:
+
+  du -ch */*.jpg
+
+  '
+echo: '# echo
+
+  # Print given arguments.
+
+  # More information: .
+
+  # Print a text message. Note: quotes are optional:
+
+  echo "Hello World"
+
+  # Print a message with environment variables:
+
+  echo "My path is $PATH"
+
+  # Print a message without the trailing newline:
+
+  echo -n "Hello World"
+
+  # Append a message to the file:
+
+  echo "Hello World" >> file.txt
+
+  # Enable interpretation of backslash escapes (special characters):
+
+  echo -e "Column 1\tColumn 2"
+
+  '
+egrep: '# egrep
+
+  # Find patterns in files using extended regular expression (supports `?`, `+`, `{}`,
+  `()` and `|`).
+
+  # More information: .
+
+  # Search for a pattern within a file:
+
+  egrep "search_pattern" path/to/file
+
+  # Search for a pattern within multiple files:
+
+  egrep "search_pattern" path/to/file1 path/to/file2 path/to/file3
+
+  # Search `stdin` for a pattern:
+
+  cat path/to/file | egrep search_pattern
+
+  # Print file name and line number for each match:
+
+  egrep --with-filename --line-number "search_pattern" path/to/file
+
+  # Search for a pattern in all files recursively in a directory, ignoring binary
+  files:
+
+  egrep --recursive --binary-files=without-match "search_pattern" path/to/directory
+
+  # Search for lines that do not match a pattern:
+
+  egrep --invert-match "search_pattern" path/to/file
+
+  '
+env: '# env
+
+  # Show the environment or run a program in a modified environment.
+
+  # More information: .
+
+  # Show the environment:
+
+  env
+
+  # Run a program. Often used in scripts after the shebang (#!) for looking up the
+  path to the program:
+
+  env program
+
+  # Clear the environment and run a program:
+
+  env -i program
+
+  # Remove variable from the environment and run a program:
+
+  env -u variable program
+
+  # Set a variable and run a program:
+
+  env variable=value program
+
+  # Set multiple variables and run a program:
+
+  env variable1=value variable2=value variable3=value program
+
+  '
+'false': '# false
+
+  # Returns a non-zero exit code.
+
+  # More information: .
+
+  # Return a non-zero exit code:
+
+  false
+
+  '
+fg: '# fg
+
+  # Run jobs in foreground.
+
+  # More information: .
+
+  # Bring most recently suspended or running background job to foreground:
+
+  fg
+
+  # Bring a specific job to foreground:
+
+  fg %job_id
+
+  '
+fgrep: '# fgrep
+
+  # Matches fixed strings in files.
+
+  # Equivalent to `grep -F`.
+
+  # More information: .
+
+  # Search for an exact string in a file:
+
+  fgrep search_string path/to/file
+
+  # Search only lines that match entirely in files:
+
+  fgrep -x path/to/file1 path/to/file2
+
+  # Count the number of lines that match the given string in a file:
+
+  fgrep -c search_string path/to/file
+
+  # Show the line number in the file along with the line matched:
+
+  fgrep -n search_string path/to/file
+
+  # Display all lines except those that contain the search string:
+
+  fgrep -v search_string path/to/file
+
+  # Display filenames whose content matches the search string at least once:
+
+  fgrep -l search_string path/to/file1 path/to/file2
+
+  '
+file: '# file
+
+  # Determine file type.
+
+  # More information: .
+
+  # Give a description of the type of the specified file. Works fine for files with
+  no file extension:
+
+  file path/to/file
+
+  # Look inside a zipped file and determine the file type(s) inside:
+
+  file -z foo.zip
+
+  # Allow file to work with special or device files:
+
+  file -s path/to/file
+
+  # Don''t stop at first file type match; keep going until the end of the file:
+
+  file -k path/to/file
+
+  # Determine the MIME encoding type of a file:
+
+  file -i path/to/file
+
+  '
+find: '# find
+
+  # Find files or directories under the given directory tree, recursively.
+
+  # More information: .
+
+  # Find files by extension:
+
+  find root_path -name ''*.ext''
+
+  # Find files matching multiple path/name patterns:
+
+  find root_path -path ''**/path/**/*.ext'' -or -name ''*pattern*''
+
+  # Find directories matching a given name, in case-insensitive mode:
+
+  find root_path -type d -iname ''*lib*''
+
+  # Find files matching a given pattern, excluding specific paths:
+
+  find root_path -name ''*.py'' -not -path ''*/site-packages/*''
+
+  # Find files matching a given size range, limiting the recursive depth to "1"::
+
+  find root_path -maxdepth 1 -size +500k -size -10M
+
+  # Run a command for each file (use `{}` within the command to access the filename):
+
+  find root_path -name ''*.ext'' -exec wc -l {} \;
+
+  # Find files modified in the last 7 days:
+
+  find root_path -daystart -mtime -7
+
+  # Find empty (0 byte) files and delete them:
+
+  find root_path -type f -empty -delete
+
+  '
+fold: '# fold
+
+  # Wraps each line in an input file to fit a specified width and prints it to the
+  standard output.
+
+  # More information: .
+
+  # Wrap each line to default width (80 characters):
+
+  fold path/to/file
+
+  # Wrap each line to width "30":
+
+  fold -w30 path/to/file
+
+  # Wrap each line to width "5" and break the line at spaces (puts each space separated
+  word in a new line, words with length > 5 are wrapped):
+
+  fold -w5 -s path/to/file
+
+  '
+free: '# free
+
+  # Display amount of free and used memory in the system.
+
+  # More information: .
+
+  # Display system memory:
+
+  free
+
+  # Display memory in Bytes/KB/MB/GB:
+
+  free -b|k|m|g
+
+  # Display memory in human-readable units:
+
+  free -h
+
+  # Refresh the output every 2 seconds:
+
+  free -s 2
+
+  '
+gcc: '# gcc
+
+  # Preprocess and compile C and C++ source files, then assemble and link them together.
+
+  # More information: .
+
+  # Compile multiple source files into an executable:
+
+  gcc path/to/source1.c path/to/source2.c ... -o path/to/output_executable
+
+  # Show common warnings, debug symbols in output, and optimize without affecting
+  debugging:
+
+  gcc path/to/source.c -Wall -g -Og -o path/to/output_executable
+
+  # Include libraries from a different path:
+
+  gcc path/to/source.c -o path/to/output_executable -Ipath/to/header -Lpath/to/library
+  -llibrary_name
+
+  # Compile source code into Assembler instructions:
+
+  gcc -S path/to/source.c
+
+  # Compile source code into an object file without linking:
+
+  gcc -c path/to/source.c
+
+  '
+grep: '# grep
+
+  # Find patterns in files using regular expressions.
+
+  # More information: .
+
+  # Search for a pattern within a file:
+
+  grep "search_pattern" path/to/file
+
+  # Search for an exact string (disables regular expressions):
+
+  grep --fixed-strings "exact_string" path/to/file
+
+  # Search for a pattern in all files recursively in a directory, showing line numbers
+  of matches, ignoring binary files:
+
+  grep --recursive --line-number --binary-files=without-match "search_pattern" path/to/directory
+
+  # Use extended regular expressions (supports `?`, `+`, `{}`, `()` and `|`), in case-insensitive
+  mode:
+
+  grep --extended-regexp --ignore-case "search_pattern" path/to/file
+
+  # Print 3 lines of context around, before, or after each match:
+
+  grep --context|before-context|after-context=3 "search_pattern" path/to/file
+
+  # Print file name and line number for each match with color output:
+
+  grep --with-filename --line-number --color=always "search_pattern" path/to/file
+
+  # Search for lines matching a pattern, printing only the matched text:
+
+  grep --only-matching "search_pattern" path/to/file
+
+  # Search `stdin` for lines that do not match a pattern:
+
+  cat path/to/file | grep --invert-match "search_pattern"
+
+  '
+groups: '# groups
+
+  # Print group memberships for a user.
+
+  # See also: `groupadd`, `groupdel`, `groupmod`.
+
+  # More information: .
+
+  # Print group memberships for the current user:
+
+  groups
+
+  # Print group memberships for a list of users:
+
+  groups username1 username2 ...
+
+  '
+gunzip: '# gunzip
+
+  # Extract file(s) from a gzip (.gz) archive.
+
+  # More information: .
+
+  # Extract a file from an archive, replacing the original file if it exists:
+
+  gunzip archive.tar.gz
+
+  # Extract a file to a target destination:
+
+  gunzip --stdout archive.tar.gz > archive.tar
+
+  # Extract a file and keep the archive file:
+
+  gunzip --keep archive.tar.gz
+
+  # List the contents of a compressed file:
+
+  gunzip --list file.txt.gz
+
+  # Decompress an archive from `stdin`:
+
+  cat path/to/archive.gz | gunzip
+
+  '
+gzip: '# gzip
+
+  # Compress/uncompress files with gzip compression (LZ77).
+
+  # More information: .
+
+  # Compress a file, replacing it with a gzipped compressed version:
+
+  gzip file.ext
+
+  # Decompress a file, replacing it with the original uncompressed version:
+
+  gzip -d file.ext.gz
+
+  # Compress a file, keeping the original file:
+
+  gzip --keep file.ext
+
+  # Compress a file specifying the output filename:
+
+  gzip -c file.ext > compressed_file.ext.gz
+
+  # Decompress a gzipped file specifying the output filename:
+
+  gzip -c -d file.ext.gz > uncompressed_file.ext
+
+  # Specify the compression level. 1=Fastest (Worst), 9=Slowest (Best), Default level
+  is 6:
+
+  gzip -9 -c file.ext > compressed_file.ext.gz
+
+  '
+head: '# head
+
+  # Output the first part of files.
+
+  # More information: .
+
+  # Output the first few lines of a file:
+
+  head -n count path/to/file
+
+  '
+history: '# history
+
+  # Command-line history.
+
+  # More information: .
+
+  # Display the commands history list with line numbers:
+
+  history
+
+  # Display the last 20 commands (in `zsh` it displays all commands starting from
+  the 20th):
+
+  history 20
+
+  # Clear the commands history list (only for current `bash` shell):
+
+  history -c
+
+  # Overwrite history file with history of current `bash` shell (often combined with
+  `history -c` to purge history):
+
+  history -w
+
+  # Delete the history entry at the specified offset:
+
+  history -d offset
+
+  '
+hostname: '# hostname
+
+  # Show or set the system''s host name.
+
+  # More information: .
+
+  # Show current host name:
+
+  hostname
+
+  # Show the network address of the host name:
+
+  hostname -i
+
+  # Show all network addresses of the host:
+
+  hostname -I
+
+  # Show the FQDN (Fully Qualified Domain Name):
+
+  hostname --fqdn
+
+  # Set current host name:
+
+  hostname new_hostname
+
+  '
+ifconfig: '# ifconfig
+
+  # Network Interface Configurator.
+
+  # More information: .
+
+  # View network settings of an Ethernet adapter:
+
+  ifconfig eth0
+
+  # Display details of all interfaces, including disabled interfaces:
+
+  ifconfig -a
+
+  # Disable eth0 interface:
+
+  ifconfig eth0 down
+
+  # Enable eth0 interface:
+
+  ifconfig eth0 up
+
+  # Assign IP address to eth0 interface:
+
+  ifconfig eth0 ip_address
+
+  '
+info: '# info
+
+  # Reads documentation stored in the info format.
+
+  # More information: <https://en.wikipedia.org/wiki/Info_(Unix)>.
+
+  # Start reading top-level directory menu:
+
+  info
+
+  # Start reading at given menu item node from top-level directory:
+
+  info menu_item
+
+  # Start reading at second menu item within first menu item manual:
+
+  info first_menu_item second_menu_item
+
+  '
+jobs: '# jobs
+
+  # Display status of jobs in the current session.
+
+  # More information: .
+
+  # Show status of all jobs:
+
+  jobs
+
+  # Show status of a particular job:
+
+  jobs %job_id
+
+  # Show status and process IDs of all jobs:
+
+  jobs -l
+
+  # Show process IDs of all jobs:
+
+  jobs -p
+
+  '
+join: '# join
+
+  # Join lines of two sorted files on a common field.
+
+  # More information: .
+
+  # Join two files on the first (default) field:
+
+  join file1 file2
+
+  # Join two files using a comma (instead of a space) as the field separator:
+
+  join -t '','' file1 file2
+
+  # Join field3 of file1 with field1 of file2:
+
+  join -1 3 -2 1 file1 file2
+
+  # Produce a line for each unpairable line for file1:
+
+  join -a 1 file1 file2
+
+  # Join a file from `stdin`:
+
+  cat path/to/file1 | join - path/to/file2
+
+  '
+kill: '# kill
+
+  # Sends a signal to a process, usually related to stopping the process.
+
+  # All signals except for SIGKILL and SIGSTOP can be intercepted by the process to
+  perform a clean exit.
+
+  # More information: .
+
+  # Terminate a program using the default SIGTERM (terminate) signal:
+
+  kill process_id
+
+  # List available signal names (to be used without the `SIG` prefix):
+
+  kill -l
+
+  # Terminate a background job:
+
+  kill %job_id
+
+  # Terminate a program using the SIGHUP (hang up) signal. Many daemons will reload
+  instead of terminating:
+
+  kill -1|HUP process_id
+
+  # Terminate a program using the SIGINT (interrupt) signal. This is typically initiated
+  by the user pressing `Ctrl + C`:
+
+  kill -2|INT process_id
+
+  # Signal the operating system to immediately terminate a program (which gets no
+  chance to capture the signal):
+
+  kill -9|KILL process_id
+
+  # Signal the operating system to pause a program until a SIGCONT ("continue") signal
+  is received:
+
+  kill -17|STOP process_id
+
+  # Send a `SIGUSR1` signal to all processes with the given GID (group id):
+
+  kill -SIGUSR1 -group_id
+
+  '
+less: '# less
+
+  # Open a file for interactive reading, allowing scrolling and search.
+
+  # More information: .
+
+  # Open a file:
+
+  less source_file
+
+  # Page down / up:
+
+  <Space> (down), b (up)
+
+  # Go to end / start of file:
+
+  G (end), g (start)
+
+  # Forward search for a string (press `n`/`N` to go to next/previous match):
+
+  /something
+
+  # Backward search for a string (press `n`/`N` to go to next/previous match):
+
+  ?something
+
+  # Follow the output of the currently opened file:
+
+  F
+
+  # Open the current file in an editor:
+
+  v
+
+  # Exit:
+
+  q
+
+  '
+ln: '# ln
+
+  # Creates links to files and directories.
+
+  # More information: .
+
+  # Create a symbolic link to a file or directory:
+
+  ln -s /path/to/file_or_directory path/to/symlink
+
+  # Overwrite an existing symbolic link to point to a different file:
+
+  ln -sf /path/to/new_file path/to/symlink
+
+  # Create a hard link to a file:
+
+  ln /path/to/file path/to/hardlink
+
+  '
+ls: '# ls
+
+  # List directory contents.
+
+  # More information: .
+
+  # List files one per line:
+
+  ls -1
+
+  # List all files, including hidden files:
+
+  ls -a
+
+  # List all files, with trailing `/` added to directory names:
+
+  ls -F
+
+  # Long format list (permissions, ownership, size, and modification date) of all
+  files:
+
+  ls -la
+
+  # Long format list with size displayed using human-readable units (KiB, MiB, GiB):
+
+  ls -lh
+
+  # Long format list sorted by size (descending):
+
+  ls -lS
+
+  # Long format list of all files, sorted by modification date (oldest first):
+
+  ls -ltr
+
+  # Only list directories:
+
+  ls -d */
+
+  '
+man: '# man
+
+  # Format and display manual pages.
+
+  # More information: .
+
+  # Display the man page for a command:
+
+  man command
+
+  # Display the man page for a command from section 7:
+
+  man 7 command
+
+  # List all available sections for a command:
+
+  man -f command
+
+  # Display the path searched for manpages:
+
+  man --path
+
+  # Display the location of a manpage rather than the manpage itself:
+
+  man -w command
+
+  # Display the man page using a specific locale:
+
+  man command --locale=locale
+
+  # Search for manpages containing a search string:
+
+  man -k "search_string"
+
+  '
+md5: '# md5
+
+  # Calculate MD5 cryptographic checksums.
+
+  # More information: .
+
+  # Calculate the MD5 checksum for a file:
+
+  md5 filename
+
+  # Calculate MD5 checksums for multiple files:
+
+  md5 filename1 filename2
+
+  # Output only the md5 checksum (no filename):
+
+  md5 -q filename
+
+  # Print a checksum of the given string:
+
+  md5 -s "string"
+
+  '
+md5sum: '# md5sum
+
+  # Calculate MD5 cryptographic checksums.
+
+  # More information: .
+
+  # Calculate the MD5 checksum for a file:
+
+  md5sum path/to/file
+
+  # Calculate MD5 checksums for multiple files:
+
+  md5sum path/to/file1 path/to/file2
+
+  # Calculate an MD5 checksum from `stdin`:
+
+  some_command" | md5sum
+
+  # Read a file of MD5SUMs and verify all files have matching checksums:
+
+  md5sum --check path/to/file.md5
+
+  # Only show a message for missing files or when verification fails:
+
+  md5sum --check --quiet path/to/file.md5
+
+  # Only show a message for files for which verification fails, ignoring missing files:
+
+  md5sum --ignore-missing --check --quiet path/to/file.md5
+
+  '
+mkdir: '# mkdir
+
+  # Create directories and set their permissions.
+
+  # More information: .
+
+  # Create specific directories:
+
+  mkdir path/to/directory1 path/to/directory2 ...
+
+  # Create specific directories and their [p]arents if needed:
+
+  mkdir -p path/to/directory1 path/to/directory2 ...
+
+  # Create directories with specific permissions:
+
+  mkdir -m rwxrw-r-- path/to/directory1 path/to/directory2 ...
+
+  '
+mktemp: '# mktemp
+
+  # Create a temporary file or directory.
+
+  # More information: .
+
+  # Create an empty temporary file and print the absolute path to it:
+
+  mktemp
+
+  # Create an empty temporary file with a given suffix and print the absolute path
+  to file:
+
+  mktemp --suffix ".ext"
+
+  # Create a temporary directory and print the absolute path to it:
+
+  mktemp -d
+
+  '
+more: '# more
+
+  # Open a file for interactive reading, allowing scrolling and search.
+
+  # More information: .
+
+  # Open a file:
+
+  more path/to/file
+
+  # Open a file displaying from a specific line:
+
+  more +line_number path/to/file
+
+  # Display help:
+
+  more --help
+
+  # Go to the next page:
+
+  <Space>
+
+  # Search for a string (press `n` to go to the next match):
+
+  /something
+
+  # Exit:
+
+  q
+
+  # Display help about interactive commands:
+
+  h
+
+  '
+mount: '# mount
+
+  # Provides access to an entire filesystem in one directory.
+
+  # More information: .
+
+  # Show all mounted filesystems:
+
+  mount
+
+  # Mount a device to a directory:
+
+  mount -t filesystem_type path/to/device_file path/to/target_directory
+
+  # Create a specific directory if it does not exist and mount a device to it:
+
+  mount --mkdir path/to/device_file path/to/target_directory
+
+  # Mount a device to a directory for a specific user:
+
+  mount -o uid=user_id,gid=group_id path/to/device_file path/to/target_directory
+
+  # Mount a CD-ROM device (with the filetype ISO9660) to `/cdrom` (readonly):
+
+  mount -t iso9660 -o ro /dev/cdrom /cdrom
+
+  # Mount all the filesystem defined in `/etc/fstab`:
+
+  mount -a
+
+  # Mount a specific filesystem described in `/etc/fstab` (e.g. `/dev/sda1 /my_drive
+  ext2 defaults 0 2`):
+
+  mount /my_drive
+
+  # Mount a directory to another directory:
+
+  mount --bind path/to/old_dir path/to/new_dir
+
+  '
+mv: '# mv
+
+  # Move or rename files and directories.
+
+  # More information: .
+
+  # Rename a file or directory when the target is not an existing directory:
+
+  mv source target
+
+  # Move a file or directory into an existing directory:
+
+  mv source existing_directory
+
+  # Move multiple files into an existing directory, keeping the filenames unchanged:
+
+  mv source1 source2 source3 existing_directory
+
+  # Do not prompt for confirmation before overwriting existing files:
+
+  mv -f source target
+
+  # Prompt for confirmation before overwriting existing files, regardless of file
+  permissions:
+
+  mv -i source target
+
+  # Do not overwrite existing files at the target:
+
+  mv -n source target
+
+  # Move files in verbose mode, showing files after they are moved:
+
+  mv -v source target
+
+  '
+nl: '# nl
+
+  # A utility for numbering lines, either from a file, or from standard input.
+
+  # More information: .
+
+  # Number non-blank lines in a file:
+
+  nl path/to/file
+
+  # Read from standard output:
+
+  cat path/to/file | nl options -
+
+  # Number only the lines with printable text:
+
+  nl -t path/to/file
+
+  # Number all lines including blank lines:
+
+  nl -b a path/to/file
+
+  # Number only the body lines that match a basic regular expression (BRE) pattern:
+
+  nl -b p''FooBar[0-9]'' path/to/file
+
+  '
+nohup: '# nohup
+
+  # Allows for a process to live when the terminal gets killed.
+
+  # More information: .
+
+  # Run a process that can live beyond the terminal:
+
+  nohup command argument1 argument2 ...
+
+  # Launch `nohup` in background mode:
+
+  nohup command argument1 argument2 ... &
+
+  # Run a shell script that can live beyond the terminal:
+
+  nohup path/to/script.sh &
+
+  # Run a process and write the output to a specific file:
+
+  nohup command argument1 argument2 ... > path/to/output_file &
+
+  '
+od: '# od
+
+  # Display file contents in octal, decimal or hexadecimal format.
+
+  # Optionally display the byte offsets and/or printable representation for each line.
+
+  # More information: .
+
+  # Display file using default settings: octal format, 8 bytes per line, byte offsets
+  in octal, and duplicate lines replaced with `*`:
+
+  od path/to/file
+
+  # Display file in verbose mode, i.e. without replacing duplicate lines with `*`:
+
+  od -v path/to/file
+
+  # Display file in hexadecimal format (2-byte units), with byte offsets in decimal
+  format:
+
+  od --format=x --address-radix=d -v path/to/file
+
+  # Display file in hexadecimal format (1-byte units), and 4 bytes per line:
+
+  od --format=x1 --width=4 -v path/to/file
+
+  # Display file in hexadecimal format along with its character representation, and
+  do not print byte offsets:
+
+  od --format=xz --address-radix=n -v path/to/file
+
+  # Read only 100 bytes of a file starting from the 500th byte:
+
+  od --read-bytes 100 --skip-bytes=500 -v path/to/file
+
+  '
+paste: '# paste
+
+  # Merge lines of files.
+
+  # More information: .
+
+  # Join all the lines into a single line, using TAB as delimiter:
+
+  paste -s path/to/file
+
+  # Join all the lines into a single line, using the specified delimiter:
+
+  paste -s -d delimiter path/to/file
+
+  # Merge two files side by side, each in its column, using TAB as delimiter:
+
+  paste file1 file2
+
+  # Merge two files side by side, each in its column, using the specified delimiter:
+
+  paste -d delimiter file1 file2
+
+  # Merge two files, with lines added alternatively:
+
+  paste -d ''\n'' file1 file2
+
+  '
+ping: '# ping
+
+  # Send ICMP ECHO_REQUEST packets to network hosts.
+
+  # More information: .
+
+  # Ping host:
+
+  ping host
+
+  # Ping a host only a specific number of times:
+
+  ping -c count host
+
+  # Ping host, specifying the interval in seconds between requests (default is 1 second):
+
+  ping -i seconds host
+
+  # Ping host without trying to lookup symbolic names for addresses:
+
+  ping -n host
+
+  # Ping host and ring the bell when a packet is received (if your terminal supports
+  it):
+
+  ping -a host
+
+  # Also display a message if no response was received:
+
+  ping -O host
+
+  '
+popd: '# popd
+
+  # Remove a directory placed on the directory stack via the pushd shell built-in.
+
+  # See also `pushd` to place a directory on the stack and `dirs` to display directory
+  stack contents.
+
+  # More information: .
+
+  # Remove the top directory from the stack and cd to it:
+
+  popd
+
+  # Remove the Nth directory (starting from zero to the left from the list printed
+  with `dirs`):
+
+  popd +N
+
+  # Remove the Nth directory (starting from zero to the right from the list printed
+  with `dirs`):
+
+  popd -N
+
+  '
+ps: '# ps
+
+  # Information about running processes.
+
+  # More information: .
+
+  # List all running processes:
+
+  ps aux
+
+  # List all running processes including the full command string:
+
+  ps auxww
+
+  # Search for a process that matches a string:
+
+  ps aux | grep string
+
+  # List all processes of the current user in extra full format:
+
+  ps --user $(id -u) -F
+
+  # List all processes of the current user as a tree:
+
+  ps --user $(id -u) f
+
+  # Get the parent PID of a process:
+
+  ps -o ppid= -p pid
+
+  # Sort processes by memory consumption:
+
+  ps --sort size
+
+  '
+pstree: '# pstree
+
+  # A convenient tool to show running processes as a tree.
+
+  # More information: .
+
+  # Display a tree of processes:
+
+  pstree
+
+  # Display a tree of processes with PIDs:
+
+  pstree -p
+
+  # Display all process trees rooted at processes owned by specified user:
+
+  pstree user
+
+  '
+pushd: '# pushd
+
+  # Place a directory on a stack so it can be accessed later.
+
+  # See also `popd` to switch back to original directory and `dirs` to display directory
+  stack contents.
+
+  # Switch to directory and push it on the stack:
+
+  pushd path/to/directory
+
+  # Switch first and second directories on the stack:
+
+  pushd
+
+  # Rotate stack by making the 5th element the top of the stack:
+
+  pushd +4
+
+  '
+pwd: '# pwd
+
+  # Print name of current/working directory.
+
+  # More information: .
+
+  # Print the current directory:
+
+  pwd
+
+  # Print the current directory, and resolve all symlinks (i.e. show the "physical"
+  path):
+
+  pwd -P
+
+  '
+read: '# read
+
+  # BASH builtin for retrieving data from standard input.
+
+  # More information: .
+
+  # Store data that you type from the keyboard:
+
+  read variable
+
+  # Store each of the next lines you enter as values of an array:
+
+  read -a array
+
+  # Specify the number of maximum characters to be read:
+
+  read -n character_count variable
+
+  # Use a specific character as a delimiter instead of a new line:
+
+  read -d new_delimiter variable
+
+  # Do not let backslash (\\) act as an escape character:
+
+  read -r variable
+
+  # Display a prompt before the input:
+
+  read -p "Enter your input here: " variable
+
+  # Do not echo typed characters (silent mode):
+
+  read -s variable
+
+  # Read `stdin` and perform an action on every line:
+
+  while read line; do echo "$line"; done
+
+  '
+readlink: '# readlink
+
+  # Follow symlinks and get symlink information.
+
+  # More information: .
+
+  # Get the actual file to which the symlink points:
+
+  readlink path/to/file
+
+  # Get the absolute path to a file:
+
+  readlink -f path/to/file
+
+  '
+rename: '# rename
+
+  # Rename multiple files.
+
+  # NOTE: this page refers to the command from the `util-linux` package.
+
+  # For the Perl version, see `file-rename` or `perl-rename`.
+
+  # Warning: This command has no safeguards and will overwrite files without prompting.
+
+  # More information: .
+
+  # Rename files using simple substitutions (substitute ''foo'' with ''bar'' wherever
+  found):
+
+  rename foo bar *
+
+  # Dry-run - display which renames would occur without performing them:
+
+  rename -vn foo bar *
+
+  # Do not overwrite existing files:
+
+  rename -o foo bar *
+
+  # Change file extensions:
+
+  rename .ext .bak *.ext
+
+  # Prepend "foo" to all filenames in the current directory:
+
+  rename '''' ''foo'' *
+
+  # Rename a group of increasingly numbered files zero-padding the numbers up to 3
+  digits:
+
+  rename foo foo00 foo? && rename foo foo0 foo??
+
+  '
+rev: '# rev
+
+  # Reverse a line of text.
+
+  # More information: .
+
+  # Reverse the text string "hello":
+
+  echo "hello" | rev
+
+  # Reverse an entire file and print to `stdout`:
+
+  rev path/to/file
+
+  '
+rm: '# rm
+
+  # Remove files or directories.
+
+  # See also: `rmdir`.
+
+  # More information: .
+
+  # Remove specific files:
+
+  rm path/to/file1 path/to/file2 ...
+
+  # Remove specific files ignoring nonexistent ones:
+
+  rm -f path/to/file1 path/to/file2 ...
+
+  # Remove specific files [i]nteractively prompting before each removal:
+
+  rm -i path/to/file1 path/to/file2 ...
+
+  # Remove specific files printing info about each removal:
+
+  rm -v path/to/file1 path/to/file2 ...
+
+  # Remove specific files and directories [r]ecursively:
+
+  rm -r path/to/file_or_directory1 path/to/file_or_directory2 ...
+
+  '
+rmdir: '# rmdir
+
+  # Remove directories without files.
+
+  # See also: `rm`.
+
+  # More information: .
+
+  # Remove specific directories:
+
+  rmdir path/to/directory1 path/to/directory2 ...
+
+  # Remove specific nested directories recursively:
+
+  rmdir -p path/to/directory1 path/to/directory2 ...
+
+  '
+rsync: '# rsync
+
+  # Transfer files either to or from a remote host (but not between two remote hosts).
+
+  # Can transfer single files or multiple files matching a pattern.
+
+  # More information: .
+
+  # Transfer a file from local to a remote host:
+
+  rsync path/to/local_file remote_host:path/to/remote_directory
+
+  # Transfer a file from a remote host to local:
+
+  rsync remote_host:path/to/remote_file path/to/local_directory
+
+  # Transfer a file in [a]rchive (to preserve attributes) and compressed ([z]ipped)
+  mode displaying [v]erbose and [h]uman-readable [P]rogress:
+
+  rsync -azvhP path/to/local_file remote_host:path/to/remote_directory
+
+  # Transfer a directory and all its contents from a remote host to local:
+
+  rsync -r remote_host:path/to/remote_directory path/to/local_directory
+
+  # Transfer directory contents (but not the directory itself) from a remote host
+  to local:
+
+  rsync -r remote_host:path/to/remote_directory/ path/to/local_directory
+
+  # Transfer a directory [r]ecursively, in [a]rchive (to preserve attributes), resolving
+  contained sym[L]inks, and ignoring already transferred files [u]nless newer:
+
+  rsync -rauL remote_host:path/to/remote_directory path/to/local_directory
+
+  # Transfer a file over SSH and delete remote files that do not exist locally:
+
+  rsync -e ssh --delete remote_host:path/to/remote_file path/to/local_file
+
+  # Transfer a file over SSH using a different port than the default and show global
+  progress:
+
+  rsync -e ''ssh -p port'' --info=progress2 remote_host:path/to/remote_file path/to/local_file
+
+  '
+scp: '# scp
+
+  # Secure copy.
+
+  # Copy files between hosts using Secure Copy Protocol over SSH.
+
+  # More information: .
+
+  # Copy a local file to a remote host:
+
+  scp path/to/local_file remote_host:path/to/remote_file
+
+  # Use a specific port when connecting to the remote host:
+
+  scp -P port path/to/local_file remote_host:path/to/remote_file
+
+  # Copy a file from a remote host to a local directory:
+
+  scp remote_host:path/to/remote_file path/to/local_directory
+
+  # Recursively copy the contents of a directory from a remote host to a local directory:
+
+  scp -r remote_host:path/to/remote_directory path/to/local_directory
+
+  # Copy a file between two remote hosts transferring through the local host:
+
+  scp -3 host1:path/to/remote_file host2:path/to/remote_directory
+
+  # Use a specific username when connecting to the remote host:
+
+  scp path/to/local_file remote_username@remote_host:path/to/remote_directory
+
+  # Use a specific ssh private key for authentication with the remote host:
+
+  scp -i ~/.ssh/private_key local_file remote_host:/path/remote_file
+
+  '
+sed: '# sed
+
+  # Edit text in a scriptable manner.
+
+  # See also: `awk`, `ed`.
+
+  # More information: .
+
+  # Replace all `apple` (basic regex) occurrences with `mango` (basic regex) in all
+  input lines and print the result to `stdout`:
+
+  command | sed ''s/apple/mango/g''
+
+  # Execute a specific script [f]ile and print the result to `stdout`:
+
+  command | sed -f path/to/script.sed
+
+  # Print just a first line to `stdout`:
+
+  command | sed -n ''1p''
+
+  '
+seq: '# seq
+
+  # Output a sequence of numbers to `stdout`.
+
+  # More information: .
+
+  # Sequence from 1 to 10:
+
+  seq 10
+
+  # Every 3rd number from 5 to 20:
+
+  seq 5 3 20
+
+  # Separate the output with a space instead of a newline:
+
+  seq -s " " 5 3 20
+
+  # Format output width to a minimum of 4 digits padding with zeros as necessary:
+
+  seq -f "%04g" 5 3 20
+
+  '
+set: '# set
+
+  # Display, set or unset values of shell attributes and positional parameters.
+
+  # More information: .
+
+  # Display the names and values of shell variables:
+
+  set
+
+  # Mark variables that are modified or created for export:
+
+  set -a
+
+  # Notify of job termination immediately:
+
+  set -b
+
+  # Set various options, e.g. enable `vi` style line editing:
+
+  set -o vi
+
+  # Set the shell to exit as soon as the first error is encountered (mostly used in
+  scripts):
+
+  set -e
+
+  '
+sh: '# sh
+
+  # Bourne shell, the standard command language interpreter.
+
+  # See also `histexpand` for history expansion.
+
+  # More information: .
+
+  # Start an interactive shell session:
+
+  sh
+
+  # Execute a command and then exit:
+
+  sh -c "command"
+
+  # Execute a script:
+
+  sh path/to/script.sh
+
+  # Read and execute commands from `stdin`:
+
+  sh -s
+
+  '
+shopt: '# shopt
+
+  # Manage Bash shell options: variables (stored in `$BASHOPTS`) that control behavior
+  specific to the Bash shell.
+
+  # Generic POSIX shell variables (stored in `$SHELLOPTS`) are managed with the `set`
+  command instead.
+
+  # More information: .
+
+  # List of all settable options and whether they are set:
+
+  shopt
+
+  # Set an option:
+
+  shopt -s option_name
+
+  # Unset an option:
+
+  shopt -u option_name
+
+  # Print a list of all options and their status formatted as runnable `shopt` commands:
+
+  shopt -p
+
+  # Show help for the command:
+
+  help shopt
+
+  '
+shred: '# shred
+
+  # Overwrite files to securely delete data.
+
+  # More information: .
+
+  # Overwrite a file:
+
+  shred path/to/file
+
+  # Overwrite a file, leaving zeroes instead of random data:
+
+  shred --zero path/to/file
+
+  # Overwrite a file 25 times:
+
+  shred -n25 path/to/file
+
+  # Overwrite a file and remove it:
+
+  shred --remove path/to/file
+
+  '
+sleep: '# sleep
+
+  # Delay for a specified amount of time.
+
+  # More information: .
+
+  # Delay in seconds:
+
+  sleep seconds
+
+  # Execute a specific command after 20 seconds delay:
+
+  sleep 20 && command
+
+  '
+sort: '# sort
+
+  # Sort lines of text files.
+
+  # More information: .
+
+  # Sort a file in ascending order:
+
+  sort path/to/file
+
+  # Sort a file in descending order:
+
+  sort --reverse path/to/file
+
+  # Sort a file in case-insensitive way:
+
+  sort --ignore-case path/to/file
+
+  # Sort a file using numeric rather than alphabetic order:
+
+  sort --numeric-sort path/to/file
+
+  # Sort `/etc/passwd` by the 3rd field of each line numerically, using ":" as a field
+  separator:
+
+  sort --field-separator=: --key=3n /etc/passwd
+
+  # Sort a file preserving only unique lines:
+
+  sort --unique path/to/file
+
+  # Sort a file, printing the output to the specified output file (can be used to
+  sort a file in-place):
+
+  sort --output=path/to/file path/to/file
+
+  # Sort numbers with exponents:
+
+  sort --general-numeric-sort path/to/file
+
+  '
+source: '# source
+
+  # Execute commands from a file in the current shell.
+
+  # More information: .
+
+  # Evaluate contents of a given file:
+
+  source path/to/file
+
+  # Evaluate contents of a given file (alternatively replacing `source` with `.`):
+
+  . path/to/file
+
+  '
+split: '# split
+
+  # Split a file into pieces.
+
+  # More information: .
+
+  # Split a file, each split having 10 lines (except the last split):
+
+  split -l 10 path/to/file
+
+  # Split a file into 5 files. File is split such that each split has same size (except
+  the last split):
+
+  split -n 5 path/to/file
+
+  # Split a file with 512 bytes in each split (except the last split; use 512k for
+  kilobytes and 512m for megabytes):
+
+  split -b 512 path/to/file
+
+  # Split a file with at most 512 bytes in each split without breaking lines:
+
+  split -C 512 path/to/file
+
+  '
+ssh: '# ssh
+
+  # Secure Shell is a protocol used to securely log onto remote systems.
+
+  # It can be used for logging or executing commands on a remote server.
+
+  # More information: .
+
+  # Connect to a remote server:
+
+  ssh username@remote_host
+
+  # Connect to a remote server with a specific identity (private key):
+
+  ssh -i path/to/key_file username@remote_host
+
+  # Connect to a remote server using a specific port:
+
+  ssh username@remote_host -p 2222
+
+  # Run a command on a remote server with a [t]ty allocation allowing interaction
+  with the remote command:
+
+  ssh username@remote_host -t command command_arguments
+
+  # SSH tunneling: Dynamic port forwarding (SOCKS proxy on `localhost:1080`):
+
+  ssh -D 1080 username@remote_host
+
+  # SSH tunneling: Forward a specific port (`localhost:9999` to `example.org:80`)
+  along with disabling pseudo-[T]ty allocation and executio[N] of remote commands:
+
+  ssh -L 9999:example.org:80 -N -T username@remote_host
+
+  # SSH jumping: Connect through a jumphost to a remote server (Multiple jump hops
+  may be specified separated by comma characters):
+
+  ssh -J username@jump_host username@remote_host
+
+  # Agent forwarding: Forward the authentication information to the remote machine
+  (see `man ssh_config` for available options):
+
+  ssh -A username@remote_host
+
+  '
+ssh-keygen: '# ssh-keygen
+
+  # Generate ssh keys used for authentication, password-less logins, and other things.
+
+  # More information: .
+
+  # Generate a key interactively:
+
+  ssh-keygen
+
+  # Specify file in which to save the key:
+
+  ssh-keygen -f ~/.ssh/filename
+
+  # Generate an ed25519 key with 100 key derivation function rounds:
+
+  ssh-keygen -t ed25519 -a 100
+
+  # Generate an RSA 4096-bit key with email as a comment:
+
+  ssh-keygen -t dsa|ecdsa|ed25519|rsa -b 4096 -C "comment|email"
+
+  # Remove the keys of a host from the known_hosts file (useful when a known host
+  has a new key):
+
+  ssh-keygen -R remote_host
+
+  # Retrieve the fingerprint of a key in MD5 Hex:
+
+  ssh-keygen -l -E md5 -f ~/.ssh/filename
+
+  # Change the password of a key:
+
+  ssh-keygen -p -f ~/.ssh/filename
+
+  # Change the type of the key format (for example from OPENSSH format to PEM), the
+  file will be rewritten in-place:
+
+  ssh-keygen -p -N "" -m PEM -f ~/.ssh/OpenSSH_private_key
+
+  '
+su: '# su
+
+  # Switch shell to another user.
+
+  # More information: .
+
+  # Switch to superuser (requires the root password):
+
+  su
+
+  # Switch to a given user (requires the user''s password):
+
+  su username
+
+  # Switch to a given user and simulate a full login shell:
+
+  su - username
+
+  # Execute a command as another user:
+
+  su - username -c "command"
+
+  '
+sudo: '# sudo
+
+  # Executes a single command as the superuser or another user.
+
+  # More information: .
+
+  # Run a command as the superuser:
+
+  sudo less /var/log/syslog
+
+  # Edit a file as the superuser with your default editor:
+
+  sudo --edit /etc/fstab
+
+  # Run a command as another user and/or group:
+
+  sudo --user=user --group=group id -a
+
+  # Repeat the last command prefixed with `sudo` (only in `bash`, `zsh`, etc.):
+
+  sudo !!
+
+  # Launch the default shell with superuser privileges and run login-specific files
+  (`.profile`, `.bash_profile`, etc.):
+
+  sudo --login
+
+  # Launch the default shell with superuser privileges without changing the environment:
+
+  sudo --shell
+
+  # Launch the default shell as the specified user, loading the user''s environment
+  and reading login-specific files (`.profile`, `.bash_profile`, etc.):
+
+  sudo --login --user=user
+
+  # List the allowed (and forbidden) commands for the invoking user:
+
+  sudo --list
+
+  '
+tac: '# tac
+
+  # Display and concatenate files with lines in reversed order.
+
+  # See also: `cat`.
+
+  # More information: .
+
+  # Concatenate specific files in reversed order:
+
+  tac path/to/file1 path/to/file2 ...
+
+  # Display `stdin` in reversed order:
+
+  cat path/to/file | tac
+
+  # Use a specific [s]eparator:
+
+  tac -s separator path/to/file1 path/to/file2 ...
+
+  # Use a specific [r]egex as a [s]eparator:
+
+  tac -r -s separator path/to/file1 path/to/file2 ...
+
+  # Use a separator [b]efore each file:
+
+  tac -b path/to/file1 path/to/file2 ...
+
+  '
+tail: '# tail
+
+  # Display the last part of a file.
+
+  # See also: `head`.
+
+  # More information: .
+
+  # Show last ''count'' lines in file:
+
+  tail --lines count path/to/file
+
+  # Print a file from a specific line number:
+
+  tail --lines +count path/to/file
+
+  # Print a specific count of bytes from the end of a given file:
+
+  tail --bytes count path/to/file
+
+  # Print the last lines of a given file and keep reading file until `Ctrl + C`:
+
+  tail --follow path/to/file
+
+  # Keep reading file until `Ctrl + C`, even if the file is inaccessible:
+
+  tail --retry --follow path/to/file
+
+  # Show last ''num'' lines in ''file'' and refresh every ''n'' seconds:
+
+  tail --lines count --sleep-interval seconds --follow path/to/file
+
+  '
+tar: '# tar
+
+  # Archiving utility.
+
+  # Often combined with a compression method, such as gzip or bzip2.
+
+  # More information: .
+
+  # [c]reate an archive and write it to a [f]ile:
+
+  tar cf path/to/target.tar path/to/file1 path/to/file2 ...
+
+  # [c]reate a g[z]ipped archive and write it to a [f]ile:
+
+  tar czf path/to/target.tar.gz path/to/file1 path/to/file2 ...
+
+  # [c]reate a g[z]ipped archive from a directory using relative paths:
+
+  tar czf path/to/target.tar.gz --directory=path/to/directory .
+
+  # E[x]tract a (compressed) archive [f]ile into the current directory [v]erbosely:
+
+  tar xvf path/to/source.tar[.gz|.bz2|.xz]
+
+  # E[x]tract a (compressed) archive [f]ile into the target directory:
+
+  tar xf path/to/source.tar[.gz|.bz2|.xz] --directory=path/to/directory
+
+  # [c]reate a compressed archive and write it to a [f]ile, using [a]rchive suffix
+  to determine the compression program:
+
+  tar caf path/to/target.tar.xz path/to/file1 path/to/file2 ...
+
+  # Lis[t] the contents of a tar [f]ile [v]erbosely:
+
+  tar tvf path/to/source.tar
+
+  # E[x]tract files matching a pattern from an archive [f]ile:
+
+  tar xf path/to/source.tar --wildcards "*.html"
+
+  '
+tee: '# tee
+
+  # Read from standard input and write to standard output and files (or commands).
+
+  # More information: .
+
+  # Copy standard input to each file, and also to standard output:
+
+  echo "example" | tee path/to/file
+
+  # Append to the given files, do not overwrite:
+
+  echo "example" | tee -a path/to/file
+
+  # Print standard input to the terminal, and also pipe it into another program for
+  further processing:
+
+  echo "example" | tee /dev/tty | xargs printf "[%s]"
+
+  # Create a directory called "example", count the number of characters in "example"
+  and write "example" to the terminal:
+
+  echo "example" | tee >(xargs mkdir) >(wc -c)
+
+  '
+tmux: '# tmux
+
+  # Terminal multiplexer. It allows multiple sessions with windows, panes, and more.
+
+  # See also `zellij` and `screen`.
+
+  # More information: .
+
+  # Start a new session:
+
+  tmux
+
+  # Start a new named session:
+
+  tmux new -s name
+
+  # List existing sessions:
+
+  tmux ls
+
+  # Attach to the most recently used session:
+
+  tmux attach
+
+  # Detach from the current session (inside a tmux session):
+
+  Ctrl-B d
+
+  # Create a new window (inside a tmux session):
+
+  Ctrl-B c
+
+  # Switch between sessions and windows (inside a tmux session):
+
+  Ctrl-B w
+
+  # Kill a session by name:
+
+  tmux kill-session -t name
+
+  '
+top: '# top
+
+  # Display dynamic real-time information about running processes.
+
+  # More information: .
+
+  # Start top:
+
+  top
+
+  # Do not show any idle or zombie processes:
+
+  top -i
+
+  # Show only processes owned by given user:
+
+  top -u username
+
+  # Sort processes by a field:
+
+  top -o field_name
+
+  # Show the individual threads of a given process:
+
+  top -Hp process_id
+
+  # Show only the processes with the given PID(s), passed as a comma-separated list.
+  (Normally you wouldn''t know PIDs off hand. This example picks the PIDs from the
+  process name):
+
+  top -p $(pgrep -d '','' process_name)
+
+  # Get help about interactive commands:
+
+  ?
+
+  '
+touch: '# touch
+
+  # Create files and set access/modification times.
+
+  # More information: .
+
+  # Create specific files:
+
+  touch path/to/file1 path/to/file2 ...
+
+  # Set the file [a]ccess or [m]odification times to the current one and don''t [c]reate
+  file if it doesn''t exist:
+
+  touch -c -a|m path/to/file1 path/to/file2 ...
+
+  # Set the file [t]ime to a specific value and don''t [c]reate file if it doesn''t
+  exist:
+
+  touch -c -t YYYYMMDDHHMM.SS path/to/file1 path/to/file2 ...
+
+  # Set the file time of a specific file to the time of anothe[r] file and don''t
+  [c]reate file if it doesn''t exist:
+
+  touch -c -r ~/.emacs path/to/file1 path/to/file2 ...
+
+  '
+tr: '# tr
+
+  # Translate characters: run replacements based on single characters and character
+  sets.
+
+  # More information: .
+
+  # Replace all occurrences of a character in a file, and print the result:
+
+  tr find_character replace_character < path/to/file
+
+  # Replace all occurrences of a character from another command''s output:
+
+  echo text | tr find_character replace_character
+
+  # Map each character of the first set to the corresponding character of the second
+  set:
+
+  tr ''abcd'' ''jkmn'' < path/to/file
+
+  # Delete all occurrences of the specified set of characters from the input:
+
+  tr -d ''input_characters'' < path/to/file
+
+  # Compress a series of identical characters to a single character:
+
+  tr -s ''input_characters'' < path/to/file
+
+  # Translate the contents of a file to upper-case:
+
+  tr "[:lower:]" "[:upper:]" < path/to/file
+
+  # Strip out non-printable characters from a file:
+
+  tr -cd "[:print:]" < path/to/file
+
+  '
+tree: '# tree
+
+  # Show the contents of the current directory as a tree.
+
+  # More information: .
+
+  # Print files and directories up to ''num'' levels of depth (where 1 means the current
+  directory):
+
+  tree -L num
+
+  # Print directories only:
+
+  tree -d
+
+  # Print hidden files too with colorization on:
+
+  tree -a -C
+
+  # Print the tree without indentation lines, showing the full path instead (use `-N`
+  to not escape non-printable characters):
+
+  tree -i -f
+
+  # Print the size of each file and the cumulative size of each directory, in human-readable
+  format:
+
+  tree -s -h --du
+
+  # Print files within the tree hierarchy, using a wildcard (glob) pattern, and pruning
+  out directories that don''t contain matching files:
+
+  tree -P ''*.txt'' --prune
+
+  # Print directories within the tree hierarchy, using the wildcard (glob) pattern,
+  and pruning out directories that aren''t ancestors of the wanted one:
+
+  tree -P directory_name --matchdirs --prune
+
+  # Print the tree ignoring the given directories:
+
+  tree -I ''directory_name1|directory_name2''
+
+  '
+'true': '# true
+
+  # Returns a successful exit status code of 0.
+
+  # Use this with the || operator to make a command always exit with 0.
+
+  # More information: .
+
+  # Return a successful exit code:
+
+  true
+
+  '
+uname: '# uname
+
+  # Print details about the current machine and the operating system running on it.
+
+  # See also `lsb_release`.
+
+  # More information: .
+
+  # Print kernel name:
+
+  uname
+
+  # Print system architecture and processor information:
+
+  uname --machine --processor
+
+  # Print kernel name, kernel release and kernel version:
+
+  uname --kernel-name --kernel-release --kernel-version
+
+  # Print system hostname:
+
+  uname --nodename
+
+  # Print all available system information:
+
+  uname --all
+
+  '
+uniq: '# uniq
+
+  # Output the unique lines from the given input or file.
+
+  # Since it does not detect repeated lines unless they are adjacent, we need to sort
+  them first.
+
+  # More information: .
+
+  # Display each line once:
+
+  sort path/to/file | uniq
+
+  # Display only unique lines:
+
+  sort path/to/file | uniq -u
+
+  # Display only duplicate lines:
+
+  sort path/to/file | uniq -d
+
+  # Display number of occurrences of each line along with that line:
+
+  sort path/to/file | uniq -c
+
+  # Display number of occurrences of each line, sorted by the most frequent:
+
+  sort path/to/file | uniq -c | sort -nr
+
+  '
+uptime: '# uptime
+
+  # Tell how long the system has been running and other information.
+
+  # More information: .
+
+  # Print current time, uptime, number of logged-in users and other information:
+
+  uptime
+
+  # Show only the amount of time the system has been booted for:
+
+  uptime --pretty
+
+  # Print the date and time the system booted up at:
+
+  uptime --since
+
+  # Show version information:
+
+  uptime --version
+
+  '
+vim: '# vim
+
+  # Vim (Vi IMproved), a command-line text editor, provides several modes for different
+  kinds of text manipulation.
+
+  # Pressing `i` in normal mode enters insert mode. Pressing `<Esc>` goes back to
+  normal mode, which enables the use of Vim commands.
+
+  # See also `vimdiff`, `vimtutor`, `nvim`.
+
+  # More information: .
+
+  # Open a file:
+
+  vim path/to/file
+
+  # Open a file at a specified line number:
+
+  vim +line_number path/to/file
+
+  # View Vim''s help manual:
+
+  :help<Enter>
+
+  # Save and quit the current buffer:
+
+  :wq<Enter>
+
+  # Enter normal mode and undo the last operation:
+
+  <ESC>u
+
+  # Search for a pattern in the file (press `n`/`N` to go to next/previous match):
+
+  /search_pattern<Enter>
+
+  # Perform a regular expression substitution in the whole file:
+
+  :%s/regular_expression/replacement/g<Enter>
+
+  # Display the line numbers:
+
+  :set nu<Enter>
+
+  '
+w: '# w
+
+  # Show who is logged on and what they are doing.
+
+  # Print user login, TTY, remote host, login time, idle time, current process.
+
+  # More information: .
+
+  # Show logged-in users info:
+
+  w
+
+  # Show logged-in users info without a header:
+
+  w -h
+
+  '
+watch: '# watch
+
+  # Execute a program periodically, showing output fullscreen.
+
+  # More information: .
+
+  # Repeatedly run a command and show the result:
+
+  watch command
+
+  # Re-run a command every 60 seconds:
+
+  watch -n 60 command
+
+  # Monitor the contents of a directory, highlighting differences as they appear:
+
+  watch -d ls -l
+
+  # Repeatedly run a pipeline and show the result:
+
+  watch ''command_1 | command_2 | command_3''
+
+  '
+wc: '# wc
+
+  # Count lines, words, and bytes.
+
+  # More information: .
+
+  # Count all lines in a file:
+
+  wc --lines path/to/file
+
+  # Count all words in a file:
+
+  wc --words path/to/file
+
+  # Count all bytes in a file:
+
+  wc --bytes path/to/file
+
+  # Count all characters in a file (taking multi-byte characters into account):
+
+  wc --chars path/to/file
+
+  # Count all lines, words and bytes from `stdin`:
+
+  find . | wc
+
+  # Count the length of the longest line in number of characters:
+
+  wc --max-line-length path/to/file
+
+  '
+wget: '# wget
+
+  # Download files from the Web.
+
+  # Supports HTTP, HTTPS, and FTP.
+
+  # More information: .
+
+  # Download the contents of a URL to a file (named "foo" in this case):
+
+  wget https://example.com/foo
+
+  # Download the contents of a URL to a file (named "bar" in this case):
+
+  wget --output-document bar https://example.com/foo
+
+  # Download a single web page and all its resources with 3-second intervals between
+  requests (scripts, stylesheets, images, etc.):
+
+  wget --page-requisites --convert-links --wait=3 https://example.com/somepage.html
+
+  # Download all listed files within a directory and its sub-directories (does not
+  download embedded page elements):
+
+  wget --mirror --no-parent https://example.com/somepath/
+
+  # Limit the download speed and the number of connection retries:
+
+  wget --limit-rate=300k --tries=100 https://example.com/somepath/
+
+  # Download a file from an HTTP server using Basic Auth (also works for FTP):
+
+  wget --user=username --password=password https://example.com
+
+  # Continue an incomplete download:
+
+  wget --continue https://example.com
+
+  # Download all URLs stored in a text file to a specific directory:
+
+  wget --directory-prefix path/to/directory --input-file URLs.txt
+
+  '
+which: '# which
+
+  # Locate a program in the user''s path.
+
+  # More information: .
+
+  # Search the PATH environment variable and display the location of any matching
+  executables:
+
+  which executable
+
+  # If there are multiple executables which match, display all:
+
+  which -a executable
+
+  '
+who: '# who
+
+  # Display who is logged in and related data (processes, boot time).
+
+  # More information: .
+
+  # Display the username, line, and time of all currently logged-in sessions:
+
+  who
+
+  # Display information only for the current terminal session:
+
+  who am i
+
+  # Display all available information:
+
+  who -a
+
+  # Display all available information with table headers:
+
+  who -a -H
+
+  '
+whoami: '# whoami
+
+  # Print the username associated with the current effective user ID.
+
+  # More information: .
+
+  # Display currently logged username:
+
+  whoami
+
+  # Display the username after a change in the user ID:
+
+  sudo whoami
+
+  '
+xargs: '# xargs
+
+  # Execute a command with piped arguments coming from another command, a file, etc.
+
+  # The input is treated as a single block of text and split into separate pieces
+  on spaces, tabs, newlines and end-of-file.
+
+  # More information: .
+
+  # Run a command using the input data as arguments:
+
+  arguments_source | xargs command
+
+  # Run multiple chained commands on the input data:
+
+  arguments_source | xargs sh -c "command1 && command2 | command3"
+
+  # Delete all files with a `.backup` extension (`-print0` uses a null character to
+  split file names, and `-0` uses it as delimiter):
+
+  find . -name ''*.backup'' -print0 | xargs -0 rm -v
+
+  # Execute the command once for each input line, replacing any occurrences of the
+  placeholder (here marked as `_`) with the input line:
+
+  arguments_source | xargs -I _ command _ optional_extra_arguments
+
+  # Parallel runs of up to `max-procs` processes at a time; the default is 1. If `max-procs`
+  is 0, xargs will run as many processes as possible at a time:
+
+  arguments_source | xargs -P max-procs command
+
+  '
+'yes': '# yes
+
+  # Output something repeatedly.
+
+  # This command is commonly used to answer yes to every prompt by install commands
+  (such as apt-get).
+
+  # More information: .
+
+  # Repeatedly output "message":
+
+  yes message
+
+  # Repeatedly output "y":
+
+  yes
+
+  # Accept everything prompted by the `apt-get` command:
+
+  yes | sudo apt-get install program
+
+  '
+zcat: '# zcat
+
+  # Print data from gzip compressed files.
+
+  # More information: .
+
+  # Print the uncompressed contents of a gzipped file to the standard output:
+
+  zcat file.txt.gz
+
+  # Print compression details of a gzipped file to the standard output:
+
+  zcat -l file.txt.gz
+
+  '
+zless: '# zless
+
+  # View `gzip` and `xz` compressed files.
+
+  # More information: .
+
+  # Page through a `gzip` compressed file with `less`:
+
+  zless file.txt.gz
+
+  '
