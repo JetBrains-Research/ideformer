@@ -44,11 +44,14 @@ def prepare_pipeline(model_addr):
 
 from tqdm.auto import tqdm
 
-def generate(pipeline, tokenizer, save_addr):
+def generate(pipeline, tokenizer, save_addr, lim_records=None):
     eval_hf = pd.read_json('/mnt/data/mart/gorilla/data/apibench/huggingface_eval.json', lines=True)
     apis_list = pd.read_json('/mnt/data/mart/gorilla/data/api/huggingface_api.jsonl', lines=True)
 
     generations = []
+
+    if lim_records is not None:
+        eval_hf = eval_hf.iloc[:lim_records]
 
     for i, row in tqdm(eval_hf.iterrows(), total=len(eval_hf)):
         cur_gen = {}
@@ -58,7 +61,7 @@ def generate(pipeline, tokenizer, save_addr):
         cur_gen['expected_call'] = row.api_call
 
         prompt = f"<user>: {req} \n<IDE-genie>: "
-        sequences = pipeline(prompt, max_length=256, do_sample=True, top_k=10, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
+        sequences = pipeline(prompt, max_length=1024, do_sample=True, top_k=10, num_return_sequences=1, eos_token_id=tokenizer.eos_token_id)
         cur_gen['generated_call'] = sequences[0]['generated_text'][len(prompt):]
         generations.append(cur_gen)
     
@@ -70,9 +73,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Collect answers of the model for the datase of queries')
     parser.add_argument('--model-checkpoint', type=str, help='checkpoint dir path')
     parser.add_argument('--save-addr', type=str, help='JSON path to save')
+    parser.add_argument('--records-to-process', type=int, help='limit of the dataset rows to be processed')
     args = parser.parse_args()
     
     pipeline, tokenizer = prepare_pipeline(args.model_checkpoint)
-    generate(pipeline, tokenizer, args.save_addr)
+    generate(pipeline, tokenizer, args.save_addr, args.records_to_process)
 
 
